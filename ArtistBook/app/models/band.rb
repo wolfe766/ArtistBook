@@ -5,8 +5,8 @@ class Band < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable, :lockable
 
   #attribute validations
-  validates :band_name, presence: true, length: {maximum: 250}
-  validates :genre, length: {maximum: 100}
+  validates :band_name, presence: true, length: {maximum: 70}
+  validates :genre, length: {maximum: 50}
   validates :phone, format: /\d\d\d-\d\d\d-\d\d\d\d/
 
   #Associations
