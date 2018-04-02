@@ -1,1 +1,15 @@
 <h1>Homepage#band</h1>
+<p>
+  Band Name: <%= current_band.band_name %>
+</p>
+<p>
+  Address:   <%= current_band.address %>
+</p>
+<p>  
+  Email:     <%= current_band.email %>
+</p>
+<p> Here are some active jobs posts </p>
+<div>
+  <%= render :partial => 'homepage/post', :collection => @band_posts%>
+</div>
+
