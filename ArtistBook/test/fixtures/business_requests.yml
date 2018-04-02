@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  band_decision: false
+  location: MyString
+  pay: 1.5
+
+two:
+  band_decision: false
+  location: MyString
+  pay: 1.5
