@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  band: one
+  post: one
+  bus_decision: MyString
+
+two:
+  band: two
+  post: two
+  bus_decision: MyString
