@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  message: MyString
+  date: 2018-04-08 05:25:39
+  business_id: 1
+  pay: 1.5
+  location: MyString
+
+two:
+  message: MyString
+  date: 2018-04-08 05:25:39
+  business_id: 1
+  pay: 1.5
+  location: MyString
