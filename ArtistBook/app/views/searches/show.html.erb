@@ -7,8 +7,18 @@
 
 <p>
   <strong>Business:</strong>
-  <%= @search.business %>
+  <%= @search.business.business_name %>
 </p>
+
+<table>
+	<tr>
+		<th>Band Name</th>
+		<th>Genre</th>
+		<th>Phone</th>
+		<th>Address</th>
+	</tr>
+	<%= render :partial => 'searches/band', :collection => @bands %>
+</table>
 
 <%= link_to 'Edit', edit_search_path(@search) %> |
 <%= link_to 'Back', searches_path %>
