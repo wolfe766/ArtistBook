@@ -1,29 +1,33 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Band name,:</strong>
-  <%= @band.band_name, %>
+  <strong>Band name</strong>
+  <%= @band.band_name %>
 </p>
 
 <p>
-  <strong>Genre,:</strong>
-  <%= @band.genre, %>
+  <strong>Genre</strong>
+  <%= @band.genre %>
 </p>
 
 <p>
-  <strong>Phone,:</strong>
-  <%= @band.phone, %>
+  <strong>Phone</strong>
+  <%= @band.phone %>
 </p>
 
 <p>
-  <strong>Address,:</strong>
-  <%= @band.address, %>
+  <strong>Address</strong>
+  <%= @band.address %>
 </p>
 
 <p>
   <strong>Email:</strong>
   <%= @band.email %>
 </p>
+
+<% if band_signed_in? && @band.id == current_band.id %>
+  <%= link_to "Sign Out", destroy_business_session_path, method: :delete %> |
+<% end %>
 
 <%= link_to 'Edit', edit_band_path(@band) %> |
 <%= link_to 'Back', bands_path %>
