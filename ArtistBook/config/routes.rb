@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   devise_for :bands
   
   resources :posts
-  resources :businesses, only: [:show]
+  resources :businesses
   resources :bands, only: [:show]
   resources :responses
   resources :business_requests
