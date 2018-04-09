@@ -20,7 +20,7 @@
   <%= @business.email %>
 </p>
 
-<% if @business.id = current_business.id %>
+<% if business_signed_in? && @business.id = current_business.id %>
 	<%= link_to "Sign Out", destroy_business_session_path, method: :delete %> |
 <% end %>
 
