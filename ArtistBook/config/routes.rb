@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   
   resources :posts
   resources :businesses, only: [:show]
-  resources :band, only: [:show]
+  resources :bands, only: [:show]
   resources :responses
   resources :business_requests
 end
