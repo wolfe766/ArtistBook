@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   resources :bands, only: [:show]
   resources :responses
   resources :business_requests
+  resources :searches
 end
