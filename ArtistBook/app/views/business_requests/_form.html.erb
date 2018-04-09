@@ -1,0 +1,32 @@
+<%= form_with(model: business_request, local: true) do |form| %>
+  <% if business_request.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(business_request.errors.count, "error") %> prohibited this business_request from being saved:</h2>
+
+      <ul>
+      <% business_request.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :band_decision %>
+    <%= form.text_field :band_decision, id: :business_request_band_decision %>
+  </div>
+
+  <div class="field">
+    <%= form.label :location %>
+    <%= form.text_field :location, id: :business_request_location %>
+  </div>
+
+  <div class="field">
+    <%= form.label :pay %>
+    <%= form.text_field :pay, id: :business_request_pay %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Band decision:</strong>
+  <%= @business_request.band_decision %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @business_request.location %>
+</p>
+
+<p>
+  <strong>Pay:</strong>
+  <%= @business_request.pay %>
+</p>
+
+<%= link_to 'Edit', edit_business_request_path(@business_request) %> |
+<%= link_to 'Back', business_requests_path %>
