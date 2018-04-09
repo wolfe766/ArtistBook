@@ -1,15 +1,17 @@
 class SearchesController < ApplicationController
   before_action :set_search, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_business!
 
   # GET /searches
   # GET /searches.json
   def index
-    @searches = Search.all
+    @searches = Search.where(business_id: current_business.id)
   end
 
   # GET /searches/1
   # GET /searches/1.json
   def show
+    @bands = Band.where(genre: @search.genre)
   end
 
   # GET /searches/new
@@ -25,6 +27,7 @@ class SearchesController < ApplicationController
   # POST /searches.json
   def create
     @search = Search.new(search_params)
+    @search.business_id = current_business.id
 
     respond_to do |format|
       if @search.save
