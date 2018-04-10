@@ -14,6 +14,8 @@ class Business < ApplicationRecord
 
   # Business associations
   has_many :business_requests
+  has_many :bands, through: :business_requests
+
   has_many :posts
   has_many :searches
 end
