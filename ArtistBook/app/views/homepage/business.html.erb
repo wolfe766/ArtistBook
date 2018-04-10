@@ -1,0 +1,9 @@
+<h1>Homepage#business</h1>
+<p>Find me in app/views/homepage/home.html.erb</p>
+
+<%= current_business.email %>
+
+<p> Here are your current active job posts</p>
+<div>
+<%= render :partial => 'homepage/post', :collection => @posts %>
+</div>
