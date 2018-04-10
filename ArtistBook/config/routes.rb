@@ -8,4 +8,9 @@ Rails.application.routes.draw do
   resources :responses
   resources :business_requests
   resources :searches
+
+  #temp: will be changed later
+  devise_scope :band do
+    root to: "devise/sessions#new"
+  end
 end
