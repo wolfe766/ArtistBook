@@ -12,8 +12,11 @@ class BusinessRequestsController < ApplicationController
   def show
   end
 
-  # GET /business_requests/new
+  # GET /business_requests/new?band_id=ID
   def new
+    if params[:band_id]
+      @band_id = params[:band_id]
+    end
     @business_request = BusinessRequest.new
   end
 
@@ -69,6 +72,6 @@ class BusinessRequestsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def business_request_params
-      params.require(:business_request).permit(:band_decision, :location, :pay)
+      params.require(:business_request).permit(:band_decision, :location, :pay, :band_id)
     end
 end
