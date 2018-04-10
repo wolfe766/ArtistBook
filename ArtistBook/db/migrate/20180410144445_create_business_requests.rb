@@ -3,9 +3,12 @@ class CreateBusinessRequests < ActiveRecord::Migration[5.1]
     create_table :business_requests do |t|
       t.references :business, foreign_key: true
       t.references :band, foreign_key: true
-      t.decimal :pay
+      t.string :pay
       t.boolean :band_decision
       t.string :message
+      t.string :date
+      t.string :time
+      t.string :location
 
       t.timestamps
     end
