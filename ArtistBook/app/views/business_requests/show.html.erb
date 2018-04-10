@@ -6,6 +6,16 @@
 </p>
 
 <p>
+  <strong>Date:</strong>
+  <%= @business_request.date %>
+</p>
+
+<p>
+  <strong>Time:</strong>
+  <%= @business_request.time %>
+</p>
+
+<p>
   <strong>Location:</strong>
   <%= @business_request.location %>
 </p>
@@ -13,6 +23,11 @@
 <p>
   <strong>Pay:</strong>
   <%= @business_request.pay %>
+</p>
+
+<p>
+  <strong>Message:</strong>
+  <%= @business_request.message %>
 </p>
 
 <%= link_to 'Edit', edit_business_request_path(@business_request) %> |
