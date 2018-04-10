@@ -1,7 +1,5 @@
 class PostsController < ApplicationController
-  before_action :set_post, only: [:show, :edit, :update, :destroy]
- # before_action :authenticate_business!
- # before_action :authenticate_band! 
+  before_action :set_post, only: [:show, :edit, :update, :destroy] 
 
 =begin
   MODIFIED: David Levine 4/9/2018
@@ -41,8 +39,17 @@ end
     
     if user_type == "business"
       @posts = Post.where business_id: current_business.id
+      @business_name = current_business.business_name
     elsif user_type == "band"
       @posts = Post.all
+      #generate a hash of business names
+      @name_hash = {}
+      @posts.each do |post|
+        if !@name_hash.has_key? post.business_id
+          business_name = Business.find(post.business_id).business_name
+          @name_hash[post.business_id] = business_name
+        end
+      end
     end
     
   end
@@ -58,10 +65,14 @@ end
     if user_type == "business" 
       #restrict business from viewing other businesses posts.
       @post = Post.find(params[:id])
+      @business_name = Business.find(@post.business_id).business_name
       if @post.business_id != current_business.id
         flash[:alert] = "You are not authorized to view other business posts."
         redirect_to action: "index"
       end
+    elsif user_type == "band"
+      @post = Post.find(params[:id])
+      @business_name = Business.find(@post.business_id).business_name
     end
   end
 

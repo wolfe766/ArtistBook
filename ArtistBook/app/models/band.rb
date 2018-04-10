@@ -10,6 +10,7 @@ class Band < ApplicationRecord
   validates :phone, format: /\d\d\d-\d\d\d-\d\d\d\d/
 
   #Associations
+  has_many :responds
   has_many :posts, through: :responds
   has_many :business_requests
 

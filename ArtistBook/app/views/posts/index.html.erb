@@ -1,6 +1,14 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Posts</h1>
+<%
+=begin
+  MODIFIED: David Levine 04/09/2018
+    -Changed view to support different user accounts.
+=end
+%>
+<% if business_signed_in? %>
+<h1>Your Business's Requests</h1>
+<% else %>
+<h1>All Business Requests</h1>
+<% end %>
 <% #check if user has made any posts yet. otherwise notify them they need to make post %>
 <% if !@posts%>
   <p>You haven't made any posts yet!</p>
@@ -10,7 +18,9 @@
     <tr>
       <th>Message</th>
       <th>Date</th>
+      <% if band_signed_in? %>
       <th>Business</th>
+      <% end %>
       <th>Pay</th>
       <th>Location</th>
       <th colspan="3"></th>
@@ -23,12 +33,19 @@
       <tr>
         <td><%= post.message %></td>
         <td><%= post.date %></td>
-        <td><%= post.business_id %></td>
+        <% if band_signed_in? %>
+          <td><%= @name_hash[post.business_id] %></td>
+        <% end %>
         <td><%= post.pay %></td>
         <td><%= post.location %></td>
-        <td><%= link_to 'Show', post %></td>
-        <td><%= link_to 'Edit', edit_post_path(post) %></td>
-        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% if business_signed_in? %>
+          <td><%= link_to 'Show Responses', post %></td>
+          <td><%= link_to 'Edit Request', edit_post_path(post) %></td>
+          <td><%= link_to 'Delete Request', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% else %>
+          <td><%= link_to 'View', post%></td>
+          <td><%= link_to 'Apply', post%></td> <% #TODO: SET UP APPROPRIATE ROUTES AND CONTROLLER CODE FOR THIS %>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
@@ -38,4 +55,6 @@
 
 <br>
 
-<%= link_to 'New Post', new_post_path %>
+<% if business_signed_in? %>
+<%= link_to 'Make New Band Request', new_post_path %>
+<% end %>

@@ -12,7 +12,7 @@
 
 <p>
   <strong>Business:</strong>
-  <%= @post.business_id %>
+  <%= @business_name %>
 </p>
 
 <p>
@@ -25,5 +25,22 @@
   <%= @post.location %>
 </p>
 
+<% if business_signed_in? %>
+<p>
+  <strong>Responses</strong>
+  <% if !@post.responses %>
+    <% @post.responses do |response| %>
+
+    <% end %>
+  <% else %>
+    No responses to this post!
+  <% end %>
+</p>
+<% end %>
+
+<% if business_signed_in? %>
 <%= link_to 'Edit', edit_post_path(@post) %> |
+<% else %>
+<%= link_to 'Apply', edit_post_path(@post) %> | <%#TODO: Change path to work for applying%>
+<% end %>
 <%= link_to 'Back', posts_path %>

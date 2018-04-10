@@ -8,6 +8,14 @@ class ApplicationController < ActionController::Base
   #setup our additional parameters for our models through
   #sanitization.
 
+  def after_sign_in_path_for(resource_or_scope)
+    if band_signed_in?
+      posts_path
+    elsif business_signed_in?
+      business_path(current_business.id)
+    end
+  end
+
   protected 
 
   def configure_permitted_parameters
