@@ -18,9 +18,16 @@
     <%= form.text_field :band_id, id: :business_request_band_id %>
   <% end %>
 
+  <%= form.hidden_field :business_id, value: @business_id, id: :business_request_business_id %>
+
   <div class="field">
     <%= form.label :location %>
     <%= form.text_field :location, id: :business_request_location %>
+  </div>
+
+  <div class="field">
+    <%= form.label :message %>
+    <%= form.text_area :message, cols: "30", rows: "10", id: :business_request_location %>
   </div>
 
   <div class="field">
