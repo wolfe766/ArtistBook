@@ -13,4 +13,8 @@ class Band < ApplicationRecord
   has_many :posts, through: :responds
   has_many :business_requests
 
+  # Business requests associations
+  has_many :business_requests
+  has_many :businesses, through: :business_requests
+
 end

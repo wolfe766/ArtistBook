@@ -3,4 +3,5 @@
 	<td><%= band.genre %></td>
 	<td><%= band.phone %></td>
 	<td><%= band.address %></td>
+	<td><%= link_to "Request Band", new_business_request_path(band_id: band.id), method: :get %></td>
 </tr>

@@ -10,34 +10,32 @@
       </ul>
     </div>
   <% end %>
-  <div class="request_form">
-    <div class="field">
-      <%= form.label :location %>
-      <%= form.text_field :location, id: :business_request_location %>
-    </div>
+  
+  <% if @band_id %>
+    <%= form.hidden_field :band_id, value: @band_id, id: :business_request_band_id%>
+  <% else %>
+    <% form.label :band_id %>
+    <%= form.text_field :band_id, id: :business_request_band_id %>
+  <% end %>
 
-    <div class="field">
-      <%= form.label :date %>
-      <%= form.text_field :date, id: :business_request_date, placeholder: "yyyy-mm-dd" %>
-    </div>
+  <%= form.hidden_field :business_id, value: @business_id, id: :business_request_business_id %>
 
-    <div class="field">
-      <%= form.label :time %>
-      <%= form.text_field :time, id: :business_request_time %>
-    </div>
+  <div class="field">
+    <%= form.label :location %>
+    <%= form.text_field :location, id: :business_request_location %>
+  </div>
 
-    <div class="field">
-      <%= form.label :pay %>
-      <%= form.text_field :pay, id: :business_request_pay %>
-    </div>
+  <div class="field">
+    <%= form.label :message %>
+    <%= form.text_area :message, cols: "30", rows: "10", id: :business_request_location %>
+  </div>
 
-    <div class="field">
-      <%= form.label "Message to the artist (optional)" %>
-      <%= form.text_area :message, id: :business_request_message, rows: 5, cols: 45 %>
-    </div>
+  <div class="field">
+    <%= form.label :pay %>
+    <%= form.number_field :pay, id: :business_request_pay, :step => 0.01 %>
+  </div>
 
-    <div class="actions">
-      <%= form.submit({ value: "Send your request"}) %>
-    </div>
+  <div class="actions">
+    <%= form.submit %>
   </div>
 <% end %>
