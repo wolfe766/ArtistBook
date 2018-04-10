@@ -1,10 +1,15 @@
 class BusinessRequestsController < ApplicationController
   before_action :set_business_request, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_business!
 
   # GET /business_requests
   # GET /business_requests.json
   def index
-    @business_requests = BusinessRequest.all
+    if band_signed_in?
+      @business_requests = BusinessRequest.where(band_id: current_band.id)
+    elsif business_signed_in?
+      @business_requests = BusinessRequest.where(business_id: current_business.id)
+    end
   end
 
   # GET /business_requests/1
@@ -17,6 +22,7 @@ class BusinessRequestsController < ApplicationController
     if params[:band_id]
       @band_id = params[:band_id]
     end
+    @business_id = current_business.id
     @business_request = BusinessRequest.new
   end
 
@@ -72,6 +78,6 @@ class BusinessRequestsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def business_request_params
-      params.require(:business_request).permit(:band_decision, :location, :pay, :band_id)
+      params.require(:business_request).permit(:band_decision, :location, :pay, :band_id, :business_id)
     end
 end
