@@ -1,37 +1,43 @@
-<p id="notice"><%= notice %></p>
 
-<h1>Business Requests</h1>
+<% if business_signed_in? %>
+  <p id="notice"><%= notice %></p>
 
-<table>
-  <thead>
-    <tr>
-      <th>Band decision</th>
-      <th>Date</th>
-      <th>Time</th>
-      <th>Location</th>
-      <th>Pay</th>
-      <th>Message</th>
-      <th colspan="6"></th>
-    </tr>
-  </thead>
+  <h1>Business Requests</h1>
 
-  <tbody>
-    <% @business_requests.each do |business_request| %>
+  <table>
+    <thead>
       <tr>
-        <td><%= business_request.band_decision %></td>
-        <td><%= business_request.location %></td>
-        <td><%= business_request.pay %></td>
-        <td><%= business_request.date %></td>
-        <td><%= business_request.time %></td>
-        <td><%= business_request.message %></td>
-        <td><%= link_to 'Show', business_request %></td>
-        <td><%= link_to 'Edit', edit_business_request_path(business_request) %></td>
-        <td><%= link_to 'Destroy', business_request, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>Band decision</th>
+        <th>Date</th>
+        <th>Time</th>
+        <th>Location</th>
+        <th>Pay</th>
+        <th>Message</th>
+        <th colspan="6"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
+    <tbody>
+      <% @business_requests.each do |business_request| %>
+        <tr>
+          <td><%= business_request.band_decision %></td>
+          <td><%= business_request.location %></td>
+          <td><%= business_request.pay %></td>
+          <td><%= business_request.date %></td>
+          <td><%= business_request.time %></td>
+          <td><%= business_request.message %></td>
+          <td><%= link_to 'Show', business_request %></td>
+          <td><%= link_to 'Edit', edit_business_request_path(business_request) %></td>
+          <td><%= link_to 'Destroy', business_request, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 
-<%= link_to 'New Business Request', new_business_request_path %>
+  <br>
+
+  <%= link_to 'New Business Request', new_business_request_path %>
+  <% else %>
+  <h1> Oops! You dont have permission to view this page!</h1>
+  <%= link_to 'Home', '/' %>
+<% end %>

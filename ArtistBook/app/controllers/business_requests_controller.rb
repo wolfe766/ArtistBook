@@ -26,7 +26,7 @@ class BusinessRequestsController < ApplicationController
     @business_request = BusinessRequest.new(business_request_params)
     respond_to do |format|
       if @business_request.save
-        format.html { redirect_to @business_request, notice: 'Your business request has been sent to the artist.' }
+        format.html { redirect_to @business_request, notice: 'Your request has been sent to the artist.' }
         format.json { render :show, status: :created, location: @business_request }
       else
         format.html { render :new }
@@ -40,7 +40,7 @@ class BusinessRequestsController < ApplicationController
   def update
     respond_to do |format|
       if @business_request.update(business_request_params)
-        format.html { redirect_to @business_request, notice: 'Business request was successfully updated.' }
+        format.html { redirect_to @business_request, notice: 'Your request was successfully updated.' }
         format.json { render :show, status: :ok, location: @business_request }
       else
         format.html { render :edit }
@@ -54,7 +54,7 @@ class BusinessRequestsController < ApplicationController
   def destroy
     @business_request.destroy
     respond_to do |format|
-      format.html { redirect_to business_requests_url, notice: 'Business request was successfully destroyed.' }
+      format.html { redirect_to business_requests_url, notice: 'Your request was successfully deleted' }
       format.json { head :no_content }
     end
   end
