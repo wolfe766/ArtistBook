@@ -1,6 +1,5 @@
 class BusinessRequestsController < ApplicationController
   before_action :set_business_request, only: [:show, :edit, :update, :destroy]
-
   # GET /business_requests
   # GET /business_requests.json
   def index
@@ -25,10 +24,9 @@ class BusinessRequestsController < ApplicationController
   # POST /business_requests.json
   def create
     @business_request = BusinessRequest.new(business_request_params)
-
     respond_to do |format|
       if @business_request.save
-        format.html { redirect_to @business_request, notice: 'Business request was successfully created.' }
+        format.html { redirect_to @business_request, notice: 'Your request has been sent to the artist.' }
         format.json { render :show, status: :created, location: @business_request }
       else
         format.html { render :new }
@@ -42,7 +40,7 @@ class BusinessRequestsController < ApplicationController
   def update
     respond_to do |format|
       if @business_request.update(business_request_params)
-        format.html { redirect_to @business_request, notice: 'Business request was successfully updated.' }
+        format.html { redirect_to @business_request, notice: 'Your request was successfully updated.' }
         format.json { render :show, status: :ok, location: @business_request }
       else
         format.html { render :edit }
@@ -56,7 +54,7 @@ class BusinessRequestsController < ApplicationController
   def destroy
     @business_request.destroy
     respond_to do |format|
-      format.html { redirect_to business_requests_url, notice: 'Business request was successfully destroyed.' }
+      format.html { redirect_to business_requests_url, notice: 'Your request was successfully deleted' }
       format.json { head :no_content }
     end
   end
@@ -69,6 +67,6 @@ class BusinessRequestsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def business_request_params
-      params.require(:business_request).permit(:band_decision, :location, :pay)
+      params.require(:business_request).permit(:band_decision, :location, :pay, :date, :time, :message)
     end
 end

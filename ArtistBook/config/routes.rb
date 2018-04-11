@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'homepage/business'
+  get 'homepage/band'
+
   devise_for :businesses
   devise_for :bands
   resources :posts
@@ -7,8 +10,6 @@ Rails.application.routes.draw do
   resources :responses
   resources :business_requests
   resources :searches
-
-
   
   devise_scope :band do 
     unauthenticated :band do
@@ -24,7 +25,7 @@ Rails.application.routes.draw do
       root 'devise/sessions#new', as: 'unathenticated_business_root'
     end
     authenticated :business do
-      root 'businesses#index', as: 'athenticated_business_root'
+      root 'homepage#business', as: 'athenticated_business_root'
     end
 	end
 
