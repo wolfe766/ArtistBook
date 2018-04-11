@@ -10,6 +10,7 @@ class ResponsesController < ApplicationController
   # GET /responses/1
   # GET /responses/1.json
   def show
+    @matched_responses = Response.where(band_id: current_band.id)
   end
 
   # GET /responses/new
