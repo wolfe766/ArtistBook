@@ -1,19 +1,8 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Band:</strong>
-  <%= @response.band_id %>
-</p>
 
-<p>
-  <strong>Post:</strong>
-  <%= @response.post_id %>
-</p>
+<%= render :partial => 'responses/response', :collection => @matched_responses %>
 
-<p>
-  <strong>Bus decision:</strong>
-  <%= @response.bus_decision %>
-</p>
 
 <%= link_to 'Edit', edit_response_path(@response) %> |
 <%= link_to 'Back', responses_path %>
