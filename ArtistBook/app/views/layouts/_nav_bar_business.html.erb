@@ -19,7 +19,9 @@
       <a class="nav-link" href="#">Login</a>
     </li>
     <li>
-      <a class="nav-link" href="#">Sign Out</a>
+      <% if @business.id = current_business.id %>
+        <%= link_to "Sign Out", destroy_business_session_path, method: :delete, class: "nav-link" %>
+      <% end %>
     </li>
   </ul>
 </nav>

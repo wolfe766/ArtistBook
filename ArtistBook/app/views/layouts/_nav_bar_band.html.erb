@@ -19,7 +19,9 @@
       <a class="nav-link" href="#">Login</a>
     </li>
     <li>
-      <a class="nav-link" href="#">Sign Out</a>
+      <% if @band.id = current_band.id %>
+        <%= link_to "Sign Out", destroy_band_session_path, method: :delete, class: "nav-link" %> |
+      <% end %>
     </li>
   </ul>
 </nav>

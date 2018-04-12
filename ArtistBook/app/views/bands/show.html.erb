@@ -25,9 +25,5 @@
   <%= @band.email %>
 </p>
 
-<% if band_signed_in? && @band.id == current_band.id %>
-  <%= link_to "Sign Out", destroy_business_session_path, method: :delete %> |
-<% end %>
-
 <%= link_to 'Edit', edit_band_path(@band) %> |
 <%= link_to 'Back', bands_path %>
