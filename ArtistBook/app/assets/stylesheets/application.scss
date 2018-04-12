@@ -16,7 +16,21 @@
  */
 ///stylesheets/application.scss
 
-#sitewide_style {
+
+.navbar {
+  height: 10% !important;
+  font-size: 2em;
+}
+
+.navbar .nav-link {
+  font-size: 1.5em;
+}
+
+.navbar .navbar-brand {
+  font-size: 1.7em;
+}
+
+.site_content {
   margin-left: 16%;
   margin-right: 16%;
 }

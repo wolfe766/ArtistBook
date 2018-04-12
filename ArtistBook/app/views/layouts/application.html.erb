@@ -8,9 +8,7 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body id="sitewide_style">
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+  <body>
 
     <!-- Header navigation bar -->
     <% if business_signed_in? %>
@@ -21,7 +19,9 @@
       <%= render 'layouts/nav_bar_default' %>
     <% end %>
 
+    <div class="site_content">
     <%= yield %>
+    </div>
     <!-- Footer navigation bar -->
     <% if band_signed_in? || business_signed_in? %>
       <%= render 'layouts/footer' %>
