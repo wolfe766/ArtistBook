@@ -9,4 +9,8 @@ class HomepageController < ApplicationController
     @band_posts = Post.all
   end
 
+  def home
+  	
+  end
+
 end
