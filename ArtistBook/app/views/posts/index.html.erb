@@ -28,26 +28,7 @@
   </thead>
 
   <tbody>
-
-    <% @posts.each do |post| %>
-      <tr>
-        <td><%= post.message %></td>
-        <td><%= post.date %></td>
-        <% if band_signed_in? %>
-          <td><%= @name_hash[post.business_id] %></td>
-        <% end %>
-        <td><%= post.pay %></td>
-        <td><%= post.location %></td>
-        <% if business_signed_in? %>
-          <td><%= link_to 'Show Responses', post %></td>
-          <td><%= link_to 'Edit Request', edit_post_path(post) %></td>
-          <td><%= link_to 'Delete Request', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <% else %>
-          <td><%= link_to 'View', post%></td>
-          <td><%= link_to 'Apply', post%></td> <% #TODO: SET UP APPROPRIATE ROUTES AND CONTROLLER CODE FOR THIS %>
-        <% end %>
-      </tr>
-    <% end %>
+    <%= render partial: "posts/post", collection: @posts %>
   </tbody>
 </table>
 

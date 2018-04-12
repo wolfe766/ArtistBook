@@ -17,15 +17,10 @@ class PostsController < ApplicationController
 =end
 
 def get_login_type_or_redirect is_band_logged_in, is_business_logged_in
+
     if !is_band_logged_in && !is_business_logged_in
       flash[:alert] = "You must be logged into an account to access this page."
-      redirect_to :root
-    else
-      if is_band_logged_in
-        "band"
-      else
-        "business"
-      end
+      #TODO: Add correct redirect
     end
     
 end
@@ -35,21 +30,14 @@ end
     -index will only provide the posts that a buiness has made.
 =end
   def index
-    user_type = get_login_type_or_redirect band_signed_in?, business_signed_in?
+    get_login_type_or_redirect band_signed_in?, business_signed_in?
     
-    if user_type == "business"
+    if business_signed_in?
       @posts = Post.where business_id: current_business.id
-      @business_name = current_business.business_name
-    elsif user_type == "band"
+      
+    elsif band_signed_in?
       @posts = Post.all
-      #generate a hash of business names
-      @name_hash = {}
-      @posts.each do |post|
-        if !@name_hash.has_key? post.business_id
-          business_name = Business.find(post.business_id).business_name
-          @name_hash[post.business_id] = business_name
-        end
-      end
+      
     end
     
   end
@@ -61,8 +49,8 @@ end
     -restricts businesses so they can only view their own posts
 =end  
   def show
-    user_type = get_login_type_or_redirect band_signed_in?, business_signed_in?
-    if user_type == "business" 
+    get_login_type_or_redirect band_signed_in?, business_signed_in?
+    if business_signed_in? 
       #restrict business from viewing other businesses posts.
       @post = Post.find(params[:id])
       @business_name = Business.find(@post.business_id).business_name
@@ -70,7 +58,7 @@ end
         flash[:alert] = "You are not authorized to view other business posts."
         redirect_to action: "index"
       end
-    elsif user_type == "band"
+    elsif band_signed_in?
       @post = Post.find(params[:id])
       @business_name = Business.find(@post.business_id).business_name
     end
@@ -78,10 +66,10 @@ end
 
   # GET /posts/new
   def new
-    user_type = get_login_type_or_redirect band_signed_in?, business_signed_in?
-    if user_type == "business"
+    get_login_type_or_redirect band_signed_in?, business_signed_in?
+    if business_signed_in?
       @post = Post.new
-    elsif user_type == "band"
+    elsif band_signed_in?
       flash[:alert] = "You are not authorized to make posts."
       redirect_to action: "index"
     end
@@ -89,8 +77,8 @@ end
 
   # GET /posts/1/edit
   def edit
-    user_type = get_login_type_or_redirect band_signed_in?, business_signed_in?
-    if user_type == "business"
+    get_login_type_or_redirect band_signed_in?, business_signed_in?
+    if business_signed_in?
       @post = Post.find(params[:id])
       #check if post is made by user trying to edit it
       if @post.business_id != current_business.id
@@ -98,7 +86,7 @@ end
         redirect_to action: "index"
       end
       #restrict bands from editing any post
-    elsif user_type == "band"
+    elsif band_signed_in?
       flash[:alert] = "You are not authorized to edit this post"
       redirect_to action: "index"
     end
@@ -114,8 +102,8 @@ end
        that it's them.
 =end
   def create
-    user_type = get_login_type_or_redirect band_signed_in?, business_signed_in?
-    if user_type == "business"
+    get_login_type_or_redirect band_signed_in?, business_signed_in?
+    if business_signed_in?
       @post = Post.new(post_params)
       @post.business_id = current_business.id
 
@@ -128,7 +116,7 @@ end
           format.json { render json: @post.errors, status: :unprocessable_entity }
         end
       end
-    elsif user_type == "band"
+    elsif band_signed_in?
       flash[:alert] = "You are not authorized to create posts"
       redirect_to action: "index"
     end
@@ -138,7 +126,7 @@ end
   # PATCH/PUT /posts/1.json
   def update
     user_type = get_login_type_or_redirect band_signed_in?, business_signed_in?
-    if user_type == "business" && @post.business_id == current_business.id
+    if business_signed_in? && @post.business_id == current_business.id
       respond_to do |format|
         if @post.update(post_params)
           format.html { redirect_to @post, notice: 'Post was successfully updated.' }
@@ -148,10 +136,10 @@ end
           format.json { render json: @post.errors, status: :unprocessable_entity }
         end
       end
-    elsif user_type == "business"
+    elsif business_signed_in?
       flash[:alert] = "You are not authorized to update posts which are not yours"
       redirect_to action: "index"
-    elsif user_type == "band"
+    elsif band_signed_in?
       flash[:alert] = "You are not authorized to update posts"
       redirect_to action: "index"
     end 
@@ -161,16 +149,16 @@ end
   # DELETE /posts/1.json
   def destroy
     user_type = get_login_type_or_redirect band_signed_in?, business_signed_in?
-    if user_type == "business" && @post.business_id == current_business.id
+    if business_signed_in? && @post.business_id == current_business.id
       @post.destroy
       respond_to do |format|
         format.html { redirect_to posts_url, notice: 'Post was successfully destroyed.' }
         format.json { head :no_content }
       end
-    elsif user_type == "business"
+    elsif business_signed_in?
       flash[:alert] = "You are not authorized to delete posts which are not yours"
       redirect_to action: "index"
-    elsif user_type == "band"
+    elsif band_signed_in?
       flash[:alert] = "You are not authorized to delete posts"
       redirect_to action: "index"
     end 

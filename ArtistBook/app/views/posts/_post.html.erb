@@ -1,0 +1,17 @@
+<tr>
+  <td><%= post.message %></td>
+  <td><%= post.date %></td>
+       
+  <td><%= post.business.business_name %></td>
+  
+  <td><%= post.pay %></td>
+  <td><%= post.location %></td>
+  <% if business_signed_in? %>
+    <td><%= link_to 'Show Responses', post %></td>
+    <td><%= link_to 'Edit Request', edit_post_path(post) %></td>
+    <td><%= link_to 'Delete Request', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  <% else %>
+    <td><%= link_to 'View', post%></td>
+    <td><button class="ui primary button">Apply</button></td> 
+  <% end %>
+</tr>

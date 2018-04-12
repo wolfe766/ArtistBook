@@ -12,8 +12,11 @@ class ResponsesController < ApplicationController
   def show
   end
 
-  # GET /responses/new
+  # GET /responses/new/new[?post_id=POST_ID]
   def new
+    if params[:post_id]
+      @post_id = params[:post_id]
+    end
     @response = Response.new
   end
 

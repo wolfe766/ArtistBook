@@ -11,15 +11,13 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :band_id %>
-    <%= form.text_field :band_id, id: :response_band_id %>
-  </div>
+    <% if @post_id %>
+      <%= form.hidden_field :post_id, value: @post_id, id: :post_id%>
+    <% else %>
+      <% form.label :post_id %>
+      <%= form.text_field :post_id, id: :post_id %>
+    <% end %>
 
-  <div class="field">
-    <%= form.label :post_id %>
-    <%= form.text_field :post_id, id: :response_post_id %>
-  </div>
 
   <div class="field">
     <%= form.label :bus_decision %>
