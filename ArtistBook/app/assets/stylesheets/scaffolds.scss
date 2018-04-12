@@ -48,13 +48,27 @@ div {
 }
 
 #notice {
-  color: green;
+  margin-top: 3%;
+  padding: 2px;
+  color: darkgreen;
+  background-color: #cbf4cb;
+  border: 1px solid green;
+  border-radius: 5px;
+  width: 25%;
+}
+
+#notice::after{
+  content: " ✓";
+
 }
 
 .field_with_errors {
-  padding: 2px;
-  background-color: red;
-  display: table;
+  content: "!";
+  color: red;
+}
+
+.field_with_errors input[type="text"] {
+  box-shadow: 1px 1px 5px red;
 }
 
 #error_explanation {

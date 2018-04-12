@@ -34,7 +34,8 @@ class BusinessRequestsController < ApplicationController
   def create
     @business_request = BusinessRequest.new(business_request_params)
     respond_to do |format|
-      if @business_request.save!
+      if @business_request.valid?
+        @business_request.save!
         format.html { redirect_to @business_request, notice: 'Your request has been sent to the artist.' }
         format.json { render :show, status: :created, location: @business_request }
       else
@@ -49,8 +50,9 @@ class BusinessRequestsController < ApplicationController
   def update
     respond_to do |format|
       if @business_request.update(business_request_params)
-        format.html { redirect_to @business_request, notice: 'Your request was successfully updated.' }
-        format.json { render :show, status: :ok, location: @business_request }
+        flash[:notice] = "Your request has been successfully updated."
+        format.html { redirect_to :action => "index" }
+        format.json { render :index, status: :ok, location: @business_request }
       else
         format.html { render :edit }
         format.json { render json: @business_request.errors, status: :unprocessable_entity }
