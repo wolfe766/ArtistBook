@@ -1,6 +1,8 @@
 
 <% if business_signed_in? %>
+  <% if notice %>
   <p id="notice"><%= notice %></p>
+  <% end %>
 
   <div class="request_index">
     <h1>Business Requests</h1>
