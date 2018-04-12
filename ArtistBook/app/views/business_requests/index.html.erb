@@ -6,45 +6,47 @@
 
   <div class="request_index">
     <h1>Business Requests</h1>
-    <h2>You currently have <span class="count"><%= @business_requests.count %></span> active requests.</h2>
-    <h3>
-      Of these requests,
-      <span class="accepted"><%= @business_requests.where(:band_decision => true).count %></span> have been accepted,
-      <span class="rejected"><%= @business_requests.where(:band_decision => false).count %></span> have been rejected, and
-      <span class="pending"><%= @business_requests.count - @business_requests.count(:band_decision) %></span> are pending.
-    </h3>
-    <table class="table table-striped">
-      <thead>
-        <tr>
-          <th>Band decision</th>
-          <th>Location</th>
-          <th>Pay</th>
-          <th>Date</th>
-          <th>Time</th>
-          <th>Message</th>
-          <th colspan="6"></th>
-        </tr>
-      </thead>
-
-      <tbody>
-        <% @business_requests.each do |business_request| %>
+    <div id="animation">
+      <h2>You currently have <span class="count"><%= @business_requests.count %></span> active requests.</h2>
+      <h3>
+        Of these requests,
+        <span class="accepted"><%= @business_requests.where(:band_decision => true).count %></span> have been accepted,
+        <span class="rejected"><%= @business_requests.where(:band_decision => false).count %></span> have been rejected, and
+        <span class="pending"><%= @business_requests.count - @business_requests.count(:band_decision) %></span> are pending.
+      </h3>
+      <table class="table table-striped">
+        <thead>
           <tr>
-            <% if business_request.band_decision %>
-              <td><%= business_request.band_decision %></td>
-            <% else %>
-              <td class="pending_request">Pending</td>
-            <% end %>
-            <td><%= business_request.location %></td>
-            <td><%= business_request.pay %></td>
-            <td><%= business_request.date %></td>
-            <td><%= business_request.time %></td>
-            <td><%= business_request.message %></td>
-            <td><%= link_to 'Edit', edit_business_request_path(business_request) %></td>
-            <td><%= link_to 'Cancel', business_request, method: :delete, data: { confirm: 'Are you sure you wish to cancel this artist request?' } %></td>
+            <th>Band decision</th>
+            <th>Location</th>
+            <th>Pay</th>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Message</th>
+            <th colspan="6"></th>
           </tr>
-        <% end %>
-      </tbody>
-    </table>
+        </thead>
+
+        <tbody>
+          <% @business_requests.each do |business_request| %>
+            <tr>
+              <% if business_request.band_decision %>
+                <td><%= business_request.band_decision %></td>
+              <% else %>
+                <td class="pending_request">Pending</td>
+              <% end %>
+              <td><%= business_request.location %></td>
+              <td><%= business_request.pay %></td>
+              <td><%= business_request.date %></td>
+              <td><%= business_request.time %></td>
+              <td><%= business_request.message %></td>
+              <td><%= link_to 'Edit', edit_business_request_path(business_request) %></td>
+              <td><%= link_to 'Cancel', business_request, method: :delete, data: { confirm: 'Are you sure you wish to cancel this artist request?' } %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
 
     <br>
     <% else %>

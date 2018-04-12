@@ -36,8 +36,9 @@ class BusinessRequestsController < ApplicationController
     respond_to do |format|
       if @business_request.valid?
         @business_request.save!
-        format.html { redirect_to @business_request, notice: 'Your request has been sent to the artist.' }
-        format.json { render :show, status: :created, location: @business_request }
+        flash[:notice] = "Your request has been sent to the artist."
+        format.html { redirect_to :action => "index" }
+        format.json { render :index, status: :created, location: @business_request }
       else
         format.html { render :new }
         format.json { render json: @business_request.errors, status: :unprocessable_entity }

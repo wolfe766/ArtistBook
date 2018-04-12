@@ -34,3 +34,21 @@
   margin-left: 16%;
   margin-right: 16%;
 }
+
+
+@keyframes fadein {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slide_in {
+  from {
+    transform: translateX(-5%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}

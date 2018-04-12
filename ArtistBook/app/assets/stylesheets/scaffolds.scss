@@ -48,13 +48,14 @@ div {
 }
 
 #notice {
+  animation: fadein 1.5s;
   margin-top: 3%;
-  padding: 2px;
+  padding: 4px;
   color: darkgreen;
   background-color: #cbf4cb;
   border: 1px solid green;
   border-radius: 5px;
-  width: 25%;
+  width: 23%;
 }
 
 #notice::after{
@@ -63,11 +64,14 @@ div {
 }
 
 .field_with_errors {
-  content: "!";
   color: red;
 }
 
 .field_with_errors input[type="text"] {
+  box-shadow: 1px 1px 5px red;
+}
+
+.field_with_errors input[type="date"] {
   box-shadow: 1px 1px 5px red;
 }
 
