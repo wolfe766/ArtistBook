@@ -2,7 +2,7 @@
 <% if business_signed_in? %>
   <h1>Editing Business Request</h1>
 
-  <%= render 'form', business_request: @business_request %>
+  <%= render 'form', business_request: @business_request, @band_id => @business_request.band_id, @business_id => @business_request.business_id %>
 
   <%= link_to 'Cancel Edits', business_requests_path %>
 <% else %>

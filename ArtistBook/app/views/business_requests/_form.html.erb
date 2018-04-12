@@ -12,9 +12,14 @@
   <% end %>
 
   <div class="request_form">
-
-    <%= form.hidden_field :band_id, value: @band_id, id: :business_request_band_id%>
-    <%= form.hidden_field :business_id, value: @business_id, id: :business_request_business_id %>
+    <% current_form = request.path.split("/") %>
+    <% if current_form[current_form.length - 1] == "edit" %>
+      <%= form.hidden_field :band_id, value: @business_request.band_id, id: :business_request_band_id %>
+      <%= form.hidden_field :business_id, value: @business_request.business_id, id: :business_request_business_id %>
+    <% else %>
+      <%= form.hidden_field :band_id, value: @band_id, id: :business_request_band_id%>
+      <%= form.hidden_field :business_id, value: @business_id, id: :business_request_business_id %>
+    <% end %>
 
     <div class="field">
       <%= form.label :location %>
