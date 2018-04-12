@@ -2,13 +2,13 @@
   <a class="navbar-brand" href="#">ArtistBook</a>
   <ul class="navbar-nav mr-auto">
     <li>
-      <a class="nav-link" href="#">Home</a>
+      <a class="nav-link" href="/homepage/business">Home</a>
     </li>
     <li>
       <a class="nav-link" href="#">Profile</a>
     </li>
     <li>
-      <a class="nav-link" href="#">Search/Request Artists</a>
+      <a class="nav-link" href="/searches/new">Search/Request Artists</a>
     </li>
     <li>
       <a class="nav-link" href="#">My Active Requests</a>
@@ -16,7 +16,7 @@
   </ul>
   <ul class="nav navbar-nav navbar-right">
     <li>
-      <% if business_signed_in? && @business_id == @current_business_id %>
+      <% if business_signed_in? && @business_id = current_business.id %>
         <%= link_to "Sign Out", destroy_business_session_path, method: :delete, class: "nav-link" %>
       <% end %>
     </li>

@@ -9,7 +9,7 @@ class BusinessRequest < ApplicationRecord
 
   # Attribute Validation
   validates :location, presence: true, length: {maximum: 250 }
-  validates :date, presence: true, format: /((0[1-9])|([1][0-2]))\/((0[1-9])|(([1-2]\d)|([3][0-1]))\/\d\d\d\d)/
+  validates :date, presence: true, format: /\d\d\d\d-((0[1-9])|([1][0-2]))-((0[1-9])|(([1-2]\d)|([3][0-1])))/
   validates :time, presence: true
   validates :pay, presence: true, length: {maximum: 20}
   validates :band_decision, default: false

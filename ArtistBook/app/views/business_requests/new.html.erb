@@ -1,6 +1,8 @@
-<% if params[:band_id] %>
-  <h1>New Business Request</h1>
-  <%= render 'form', business_request: @business_request %>
+<% if params[:band_id]%>
+  <div class="business_req">
+    <h1>New Business Request</h1>
+    <%= render 'form', business_request: @business_request %>
+  </div>
 <% else %>
   <h1> Oops! You dont have permission to view this page!</h1>
 <%= link_to 'Home', '/' %>

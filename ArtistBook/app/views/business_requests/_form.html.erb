@@ -41,12 +41,11 @@
     </div>
 
     <div class="field">
-      <%= form.label "Message to the artist (optional)" %>
-      <%= form.text_area :message, cols: "45", rows: "5", id: :business_request_message %>
+      <%= form.text_area :message, cols: "45", rows: "5", placeholder: "Add a message to the artist...", id: :business_request_message %>
     </div>
 
     <div class="actions">
-      <%= form.submit({ value: "Send your request" }) %>
+      <%= form.submit({ value: "Send your request »", "data-disable-with" => "Sending..."}) %>
     </div>
   </div>
 <% end %>

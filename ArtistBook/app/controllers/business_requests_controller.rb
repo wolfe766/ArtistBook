@@ -32,12 +32,9 @@ class BusinessRequestsController < ApplicationController
   # POST /business_requests
   # POST /business_requests.json
   def create
-    print(business_request_params[:band_id])
-    print('\n')
-    print(business_request_params[:business_id])
     @business_request = BusinessRequest.new(business_request_params)
     respond_to do |format|
-      if @business_request.save
+      if @business_request.save!
         format.html { redirect_to @business_request, notice: 'Your request has been sent to the artist.' }
         format.json { render :show, status: :created, location: @business_request }
       else

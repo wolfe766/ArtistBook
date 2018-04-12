@@ -23,7 +23,7 @@
 
   <ul class="nav navbar-nav navbar-right">
     <li>
-      <% if band_signed_in? && (@band_id == @current_band_id)%>
+      <% if band_signed_in? && (@band_id = current_band.id)%>
         <%= link_to "Sign Out", destroy_band_session_path, method: :delete, class: "nav-link" %>
       <% end %>
     </li>
