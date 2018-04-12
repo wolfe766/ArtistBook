@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'developer/about_us'
+
+  get 'developer/developer_info'
+
   get 'homepage/business'
   get 'homepage/band'
   get 'homepage/home'
