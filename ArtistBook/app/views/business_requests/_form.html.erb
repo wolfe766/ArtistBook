@@ -15,7 +15,6 @@
     <% if @band_id %>
       <%= form.hidden_field :band_id, value: @band_id, id: :business_request_band_id%>
     <% else %>
-      <% form.label :band_id %>
       <%= form.text_field :band_id, id: :business_request_band_id %>
     <% end %>
 
@@ -28,7 +27,7 @@
 
     <div class="field">
       <%= form.label :date %>
-      <%= form.text_field :date, id: :business_request_date, placeholder: "yyyy-mm-dd" %>
+      <%= form.text_field :date, id: :business_request_date, type: "date", placeholder: "mm/dd/yyyy" %>
     </div>
 
     <div class="field">

@@ -1,4 +1,4 @@
-<% if business_signed_in? %>
+<% if params[:band_id] %>
   <h1>New Business Request</h1>
   <%= render 'form', business_request: @business_request %>
 <% else %>

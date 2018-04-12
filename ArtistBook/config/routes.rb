@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   get 'homepage/business'
   get 'homepage/band'
+  get 'homepage/home'
+
+  root 'homepage#home'
 
   devise_for :businesses
   devise_for :bands
@@ -9,8 +12,5 @@ Rails.application.routes.draw do
   resources :bands
   resources :responses
   resources :business_requests
-  resources :searches
-  
-
-
+  resources :searches 
 end
