@@ -1,0 +1,36 @@
+<!-- 
+Created: David Levine 04/13/2018
+Description: a partial using Semantic UI card styling to render users
+
+-->
+<div class="ui card">
+  <div class="content">
+    <div class="header"><%= band.band_name %></div>
+  </div>
+
+  <div class="content">
+    <div class="ui small feed">
+      <div class="event">
+        <div class="content">
+          <div class="summary">
+             <span>Genre:</span> <%= band.genre %>
+          </div>
+        </div>
+      </div>
+      <div class="event">
+        <div class="content">
+          <div class="summary">
+             <span>Phone Contact:</span> <%= band.phone %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="extra content">
+    
+    <button class="ui primary button">Accept</button>
+    <button class="ui primary button">Decline</button>
+    </br>
+
+  </div>
+</div>

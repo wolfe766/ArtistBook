@@ -1,46 +1,48 @@
-<p id="notice"><%= notice %></p>
+<!--
+  MODIFIED: Henry Karagory and David Levine 04/13/2018
+    -Added in support to show what bands have responded to a particular post.
+  MODIFIED: David Levine 04/13/2018
+    -Styled post data with bootstrap container and styled responses with Semantic UI styling
+-->
 
-<p>
-  <strong>Message:</strong>
-  <%= @post.message %>
-</p>
+<div class="container">
+  <h1>Gig Request</h1>
+  <div class="row">
+    <div class="col-md-4">
+      <strong>Message:</strong>
+      <hr/>
+      <p class="text-center"><%= @post.message %></p>
+    </div>
 
-<p>
-  <strong>Date:</strong>
-  <%= @post.date %>
-</p>
+    <div class="col-md-2">
+      <strong>Date:</strong>
+      <hr/>
+      <p class="text-center"><%= @post.date %></p>  
+    </div>
 
-<p>
-  <strong>Business:</strong>
-  <%= @business_name %>
-</p>
+    <div class="col-md-2">
+      <strong>Payment:</strong>
+      <hr/>
+      <p class="text-center"><%= @post.pay %></p>  
+    </div>
 
-<p>
-  <strong>Pay:</strong>
-  <%= @post.pay %>
-</p>
+    <div class="col-md-3">
+      <strong>Location:</strong>
+      <hr/>
+      <p class="text-center"><%= @post.location %></p>  
+    </div>
+  </div>
 
-<p>
-  <strong>Location:</strong>
-  <%= @post.location %>
-</p>
-
-<% if business_signed_in? %>
-<p>
-  <strong>Responses</strong>
-  <% if !@post.responses %>
-    <% @post.responses do |response| %>
-
-    <% end %>
+  <h1>Responses to this post:</h1>
+  <div class="cards">
+  <% if @responses.length != 0 %>
+    <% @responses.each do |response| %>
+      <%= render partial: "band", locals: {band: response.band}  %>
+    <%end%>
   <% else %>
     No responses to this post!
   <% end %>
-</p>
-<% end %>
+  </div>
+  <button class="ui button" onclick="window.location.href='<%=posts_path%>'">Return to your requests</button>
+</div>
 
-<% if business_signed_in? %>
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<% else %>
-<%= link_to 'Apply', edit_post_path(@post) %> | <%#TODO: Change path to work for applying%>
-<% end %>
-<%= link_to 'Back', posts_path %>

@@ -1,19 +1,70 @@
-<tr>
-  <td><%= post.message %></td>
-  <td><%= post.date %></td>
-       
-  <td><%= post.business.business_name %></td>
-  
-  <td><%= post.pay %></td>
-  <td><%= post.location %></td>
-  <td style="display:none;" class="post-partial-post-id"><%= post.id %></td>
-  <% if business_signed_in? %>
-    <td><%= link_to 'Show Responses', post %></td>
-    <td><%= link_to 'Edit Request', edit_post_path(post) %></td>
-    <td><%= link_to 'Delete Request', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  <% else %>
-    <td><%= link_to 'View', post%></td>
-    <td style="display:none;" class="post-partial-band-id"><%= current_band.id %></td>
-    <td><button class="ui primary button post-apply-button">Apply</button></td> 
-  <% end %>
-</tr>
+<!-- 
+Created: David and Henry 4/11/2018
+  -Setup the partial for posts together
+
+MODIFIED: David Levine 4/13/2018
+  -Changed simple partial to Semantic UI card example
+
+MODIFIED: Henry Karagory and David Levine 4/13/2018
+  -Now partial takes a variable called "applied" which lets us render appropriate
+   buttons for when a band has applied to a posting or not
+
+-->
+<div class="ui card">
+<%if band_signed_in? %>
+  <div class="content">
+    <div class="header">Business: <%= post.business.business_name %></div>
+  </div>
+<% end %>
+  <div class="content">
+    <h4 class="ui sub header">Posting Details</h4>
+    <div class="ui small feed">
+      <div class="event">
+        <div class="content">
+          <div class="summary">
+             <span>Message:</span> <%= post.message %>
+          </div>
+        </div>
+      </div>
+      <div class="event">
+        <div class="content">
+          <div class="summary">
+             <span>Gig Date:</span> <%= post.date %>
+          </div>
+        </div>
+      </div>
+      <div class="event">
+        <div class="content">
+          <div class="summary">
+             <span>Pay:</span> <%= post.pay %>
+          </div>
+        </div>
+      </div>
+      <div class="event">
+        <div class="content">
+          <div class="summary">
+             <span>Location:</span> <%= post.location %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="extra content">
+    <div style="display:none;" class="post-partial-post-id"><%= post.id %></div>
+    <% if business_signed_in? %>
+    <button class="ui primary button" onclick="window.location.href='<%=post_path(post)%>'">See Responses</button>
+    <button class="ui primary button" onclick="window.location.href='<%=edit_post_path(post)%>'">Edit</button>
+    </br>
+    <div>
+    <%= link_to 'Delete Request', post, method: :delete, data: { confirm: 'Are you sure?' } %>
+    </div>
+    <% else %>
+    <div style="display:none;" class="post-partial-band-id"><%= current_band.id %></div>
+    <% if applied %>
+    <button class='btn btn-success'>Already applied!</button>
+    <% else %>
+    <button class="ui primary button post-apply-button">Apply</button>
+    <% end %>
+    <% end %>
+  </div>
+</div>

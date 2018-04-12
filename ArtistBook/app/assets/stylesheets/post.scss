@@ -1,0 +1,51 @@
+//CREATED: David Levine 4/12/2018
+// Description: Styling for content in the posts page.
+
+.site_content {
+	.cards {
+		margin-top: 3%;
+		margin-bottom: 3%;
+	}
+
+	.request-btn{
+		margin-top: 1%;
+	}
+
+	div.container{
+		margin-top: 2%;
+		.row {
+			font-size: 1.3em;
+			p {
+				font-size: 1.1em;
+			}
+		}
+
+	}
+
+	.ui.card {
+	margin: 5px 10px;
+	display: inline-block;
+		.ui.sub.header {
+			font-size: 1.25em;
+		}
+
+		.content div.summary {
+			font-weight: normal;
+			font-size: 1.1em;
+			span {
+				font-weight: bold;
+				font-size: 1.15em;
+			}
+			
+		}
+
+		div.extra.content {
+			margin: auto;
+			text-align: center;
+			a {
+				font-weight: bolder;
+			}
+		}
+	}
+	
+}
