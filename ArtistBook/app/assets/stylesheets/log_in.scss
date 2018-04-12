@@ -1,0 +1,61 @@
+#log_in {
+  color: lightgray;
+  opacity: 0;
+  -webkit-animation: fadein 1s;
+  -moz-animation: fadein 1s;
+  animation: fadein 1s;
+  animation-fill-mode: forwards;
+  text-align: center;
+  align-content: center;
+  border: 1px solid gray;
+  border-radius: 5px;
+  margin-left: 32%;
+  margin-right: 32%;
+  padding-bottom: 3%;
+}
+
+#log_in input[type=email], input[type=password]{
+  width: 100%;
+  padding: 12px 20px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+#log_in input[type=submit] {
+  background-color: #1d6ae5;
+  color: white;
+  border: none;
+  padding: 10px 20px 10px;
+  transition: all 0.1s;
+  cursor: pointer;
+}
+
+#log_in input[type=submit]:hover {
+  opacity: 0.8;
+  color: white;
+  border: none;
+  transform: scale(1.05);
+}
+
+#log_in input[type=email]:focus {
+  box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.3) ;
+}
+
+#log_in input[type=password]:focus {
+  box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.3) ;
+}
+
+
+#log_in h2 {
+  padding-top: 3%;
+  animation: 0.5s ease-out 0s 1 slide_in;
+  color: #1d6ae5;
+  font-size: 2em;
+}
+
+#log_in form {
+  display: inline-block;
+  text-align: left;
+}
