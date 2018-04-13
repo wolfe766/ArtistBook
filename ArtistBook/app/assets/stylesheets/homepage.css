@@ -8,12 +8,12 @@ html,body {
   
   #left {
     height: 100%;
-    background: linear-gradient(to right, rgb(50, 149, 176) 0%, rgba(100,216,255,1) 20%,rgba(200,255,255,1) 85%,rgba(70, 151, 163, 1) 92%, rgba(50, 61, 71, 1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    background: linear-gradient(to right, rgb(50, 149, 176) 0%, rgba(102, 171, 255, 1)10%, rgba(100,216,255,1) 20%,rgba(200,255,255,1) 85%,rgba(70, 151, 163, 1) 92%, rgba(70, 81, 91, 1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 }
 
   #right{
       height: 100%;
-      background: linear-gradient(to right,rgba(50, 66, 38, 1) 0%, rgba(70, 95, 60, 1) 5%,rgba(220,255,144,1) 15%,rgb(120, 255, 143) 80%, rgb(50, 142, 78) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */  
+      background: linear-gradient(to right,rgba(70, 86, 58, 1) 0%, rgba(70, 95, 60, 1) 5%,rgba(220,255,144,1) 15%,rgb(120, 255, 143) 80%, rgb(50, 142, 78) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */  
 }
 
 .loginCard{
@@ -53,7 +53,7 @@ html,body {
 }
 
 .bannerCard{
-    margin-top: 20%;
+    margin-top: 30%;
     margin-left: 28%;
     margin-bottom: 1%;
     width: 35%;
@@ -64,29 +64,19 @@ html,body {
     border-bottom: 2px solid black !important; 
 }
 
-.homepageTitle{
-    font-size: 3em;
-    margin-left: 2% !important;
-    margin-top: 2% !important;
-    font-weight: bold;
-    background: linear-gradient(to right, rgb(0, 149, 176) 0%,rgba(0,216,255,1) 20%, rgb(136, 255, 203) 70%, rgb(0, 255, 143) 80%, rgba(0, 61, 71, 1) 100%) !important; 
-    color: white;
-    text-shadow: 2px 2px 2px black;   
-    height: 7%;
-    min-height: 70px;
-    padding-top: 10px;
-}
-
 .homepageNav{
     font-size: 2em;
-    margin-top: 2% !important;
+    margin-top: 1% !important;
     font-weight: bold;
-    background: linear-gradient(to right,rgb(0, 70, 57) 0%,rgba(0,216,255,1) 20%, rgb(136, 255, 203) 70%, rgb(0, 255, 143) 80%, rgba(0, 61, 71, 1) 100%) !important; 
     color: white;
     text-shadow: 2px 2px 2px black;   
     height: 7%;
     min-height: 70px;
-    padding-top: 20px !important;
+    padding-top: 25px !important;
+    position: fixed;
+    top: 0;
+    left: 60px;
+    background: transparent;
 }
 
 .homepageNavItem{
@@ -98,4 +88,13 @@ html,body {
     color: white;
     background: none;
     text-decoration: underline;
+}
+
+.homepageNavItemLeft{
+    float: left;
+    margin: 0 !important;
+    font-size: 2em;
+    position: fixed;
+    top: 8px;
+    left: 70px;
 }
