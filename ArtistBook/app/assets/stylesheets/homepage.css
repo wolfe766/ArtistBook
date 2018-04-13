@@ -98,6 +98,8 @@ html,body {
     position: fixed;
     top: 8px;
     left: 70px;
+    font-style: italic;
+    font-weight: bold;
 }
 
 .homepageNavItemMid{
