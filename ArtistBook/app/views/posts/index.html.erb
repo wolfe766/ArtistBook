@@ -2,18 +2,24 @@
 =begin
   MODIFIED: David Levine 04/09/2018
     -Changed view to support different user accounts.
+  MODIFIED: Henry Karagory and David Levnie 04/13/2018
+  	-Now render for bands what posts they have applied to and what they have not
+  	 applied to.
 =end
 %>
 <% if business_signed_in? %>
 <h1>Your Business's Requests</h1>
-<% else %>
-<h1>All Business Requests</h1>
-<% end %>
 <% #check if user has made any posts yet. otherwise notify them they need to make post %>
 <% if !@posts%>
   <p>You haven't made any posts yet!</p>
 <% else %>
 <%= render partial: "posts/post", collection: @posts %>
+<% end %>
+
+<% else %>
+<h1>All Business Requests</h1>
+<%= render partial: "posts/post", collection: @posts_applied, locals: {applied: true} %>
+<%= render partial: "posts/post", collection: @posts_not_applied, locals: {applied: false} %>
 <% end %>
 
 <br>

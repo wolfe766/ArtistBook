@@ -1,3 +1,8 @@
+<!--
+  MODIFIED: Henry Karagory and David Levine 04/13/2018
+    -Added in support to show what bands have responded to a particular post.
+-->
+
 <p>
   <strong>Message:</strong>
   <%= @post.message %>
@@ -26,10 +31,10 @@
 <% if business_signed_in? %>
 <p>
   <strong>Responses</strong>
-  <% if !@post.responses %>
-    <% @post.responses do |response| %>
-
-    <% end %>
+  <% if @responses %>
+    <% @responses.each do |response| %>
+      <%= response.band.band_name %>
+    <%end%>
   <% else %>
     No responses to this post!
   <% end %>

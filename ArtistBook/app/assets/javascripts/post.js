@@ -1,3 +1,9 @@
+/*
+	MODIFIED: 04/13/2018 Henry Karagory and David Levine
+		-Updated postId and bandId so that they no longer would
+		access parent to get the html
+*/
+
 $( document ).ready(function() {
 	$.ajaxSetup({
 	  headers: {
@@ -6,8 +12,9 @@ $( document ).ready(function() {
 	});
 
 	$('.post-apply-button').click(function(){
-		var postId = $(this).parent().siblings('.post-partial-post-id').html();
-		var bandId = $(this).parent().siblings('.post-partial-band-id').html();
+		var postId = $(this).siblings('.post-partial-post-id').html();
+		var bandId = $(this).siblings('.post-partial-band-id').html();
+		console.log ("\n" + postId + " and " +bandId)
 		$.ajax({
 		  type: "POST",
 		  url: '/responses.json',

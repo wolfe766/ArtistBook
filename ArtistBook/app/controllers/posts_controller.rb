@@ -28,6 +28,9 @@ end
 =begin
   MODIFIED: David Levine 4/9/2018
     -index will only provide the posts that a buiness has made.
+  MODIFIED: Henry Karagory and David Levine 4/13/2018
+    -When a band is logged in, seperate band postings by what bands have not applied to and what they have applied to.
+
 =end
   def index
     get_login_type_or_redirect band_signed_in?, business_signed_in?
@@ -37,7 +40,8 @@ end
       
     elsif band_signed_in?
       @posts = Post.all
-      
+      @posts_applied = Response.where(band_id: current_band.id).map{|response| response.post}
+      @posts_not_applied = Post.find Post.all.map{|p| p.id} - @posts_applied.map{|post| post.id}
     end
     
   end
@@ -47,12 +51,14 @@ end
 =begin
   MODIFIED: David Levine 4/9/2018
     -restricts businesses so they can only view their own posts
+  MODIFIED: Henry Karagory and David Levine 4/13/2018
 =end  
   def show
     get_login_type_or_redirect band_signed_in?, business_signed_in?
     if business_signed_in? 
       #restrict business from viewing other businesses posts.
       @post = Post.find(params[:id])
+      @responses = Response.where(post_id: @post.id)
       @business_name = Business.find(@post.business_id).business_name
       if @post.business_id != current_business.id
         flash[:alert] = "You are not authorized to view other business posts."
