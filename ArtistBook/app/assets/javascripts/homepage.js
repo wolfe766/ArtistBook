@@ -16,7 +16,10 @@ $(function(){
       })
     },
     mouseleave : function() { 
-      $("#recordImage").rotate({angle: 0})        
+      $("#recordImage").rotate({
+        animateTo: 0,
+        duration: 300
+      })      
     }
   });
 
@@ -31,7 +34,10 @@ $(function(){
       })
     },
     mouseleave : function() { 
-      $("#djImage").rotate({angle: 0})        
+      $("#djImage").rotate({
+        animateTo: 0,
+        duration: 300
+      })        
     }
   });
 });
