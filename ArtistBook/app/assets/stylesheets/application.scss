@@ -16,9 +16,20 @@
  */
 ///stylesheets/application.scss
 
+body {
+  background-color: #f4f4f4;
+}
+
+
+#login_bg {
+  background-image: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.6) 100%), image-url("concert.jpg") !important;
+  background-size: 100% !important;
+}
+
 .navbar {
-  height: 10% !important;
+  height: 8% !important;
   font-size: 2em;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3) ;
 }
 
 .navbar .nav-link {
@@ -41,6 +52,7 @@
 }
 
 .site_content {
+  margin-top: 3%;
   margin-left: 16%;
   margin-right: 16%;
 }
@@ -64,7 +76,7 @@
 }
 
 a {
-  color: #0842a0;
+  color: darkblue;
 
   &:hover {
     color: lightgray;
