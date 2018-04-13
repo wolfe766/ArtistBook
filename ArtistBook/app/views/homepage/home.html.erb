@@ -1,5 +1,54 @@
-<h1>Homepage</h1>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ArtistBook</title>
+	<%= csrf_meta_tags %>
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+	<%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
 
-<p><%= link_to 'New Business', new_business_path %></p>
-<p><%= link_to 'New Band', new_band_path %></p>
+<body>
 
+	<div id="fullContainer" class="container-fluid h-100">
+		<div class=" fullRow row h-100">
+			<div class="col" id="left">
+				<div class="container homepageTitle">ArtistBook</div>
+				<div id="bandBanner" class="card bannerCard text-center">
+					<h3>Looking For Work?</h3>
+				</div>
+				<div id="bandCard" class="card loginCard text-center">
+					<%= image_tag "record.png", :id => "recordImage", :class => "loginImage" %>    
+					<div class="card-body">
+						<a href= <%= new_band_registration_path%> id="bandSignUp" class="btn btn-primary loginButton">Artist Sign Up</a>
+						<a href=<%= new_band_session_path%> id="bandSignIn" class="btn btn-success loginButton">Artist Sign In</a>
+					</div>
+				</div>
+			</div>
+
+			<div class="col" id="right">
+				<div class="container homepageNav text-right">
+					<a class="homepageNavItem" href="https://www.w3schools.com">Contact</a>
+					<a class="homepageNavItem" href="https://www.w3schools.com">About</a>          
+				</div>
+				<div id="businessBanner" class="card bannerCard text-center">
+					<h3>Looking For Talent?</h3>
+				</div>
+				<div id="businessCard" class="card loginCard text-center">
+					<%= image_tag "dj.png", :id => "djImage", :class => "loginImage" %>    
+					<div class="card-body">
+						<a href=<%= new_business_registration_path%> id="busSigUp" class="btn btn-primary loginButton">Business Sign Up</a>
+						<a href=<%= new_business_session_path%> id="busSignIn" class="btn btn-success loginButton">Business Sign In</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="http://beneposto.pl/jqueryrotate/js/jQueryRotateCompressed.js"></script>
+
+</body>
+</html>
