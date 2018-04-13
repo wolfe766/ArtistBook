@@ -14,6 +14,7 @@
 //= require turbolinks
 //= require_tree .
 //= require semantic_ui/semantic_ui
-//= require jquery3
+//= require jquery
 //= require popper
 //= require bootstrap-sprockets
+//= require post
