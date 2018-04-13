@@ -16,7 +16,7 @@
 	<%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 </head>
 
-<body>
+<body id="login_bg">
 
 	<div id="fullContainer" class="container-fluid h-100">
 		<div class=" fullRow row h-100">
@@ -27,8 +27,8 @@
 				<div id="bandCard" class="card loginCard text-center">
 					<%= image_tag "record.png", :id => "recordImage", :class => "loginImage" %>    
 					<div class="card-body">
-						<a href= <%= new_band_registration_path%> id="bandSignUp" class="btn btn-primary loginButton">Artist Sign Up</a>
-						<a href=<%= new_band_session_path%> id="bandSignIn" class="btn btn-success loginButton">Artist Sign In</a>
+						<a style="color: white" href= <%= new_band_registration_path%> id="bandSignUp" class="btn btn-info loginButton">Artist Sign Up</a>
+						<a style="color: white" href=<%= new_band_session_path%> id="bandSignIn" class="btn btn-dark loginButton">Artist Sign In</a>
 					</div>
 				</div>
 			</div>
@@ -36,7 +36,7 @@
 			<div class="col" id="right">
 				<div class="container homepageNav text-right">
 					<h1 class="homepageNavItemLeft">ArtistBook</h1>
-					<%= link_to "Contact", developer_developer_info_path, class: "homepageNavItemMid homepageNavItem" %>
+					<%= link_to "Contact", developer_developer_info_path, class: "homepageNavItemMid homepageNavItem"%>
 					<%= link_to "About", developer_about_us_path, class: "homepageNavItemRight homepageNavItem" %>     
 				</div>
 				<div id="businessBanner" class="card bannerCard text-center">
@@ -45,8 +45,8 @@
 				<div id="businessCard" class="card loginCard text-center">
 					<%= image_tag "dj.png", :id => "djImage", :class => "loginImage" %>    
 					<div class="card-body">
-						<a href=<%= new_business_registration_path%> id="busSigUp" class="btn btn-primary loginButton">Business Sign Up</a>
-						<a href=<%= new_business_session_path%> id="busSignIn" class="btn btn-success loginButton">Business Sign In</a>
+						<a style="color: white" href=<%= new_business_registration_path%> id="busSigUp" class="btn btn-info loginButton">Business Sign Up</a>
+						<a style="color: white" href=<%= new_business_session_path%> id="busSignIn" class="btn btn-dark loginButton">Business Sign In</a>
 					</div>
 				</div>
 			</div>
