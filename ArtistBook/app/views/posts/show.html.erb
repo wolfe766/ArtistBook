@@ -4,51 +4,51 @@
   MODIFIED: David Levine 04/13/2018
     -Styled post data with bootstrap container and styled responses with Semantic UI styling
 -->
+<div class="post">
+  <div class="container">
+    <h1>Gig Request</h1>
+    <div class="row">
+      <div class="col-md-4">
+        <strong>Message:</strong>
+        <hr/>
+        <p class="text-center"><%= @post.message %></p>
+      </div>
 
-<div class="container">
-  <h1>Gig Request</h1>
-  <div class="row">
-    <div class="col-md-4">
-      <strong>Message:</strong>
-      <hr/>
-      <p class="text-center"><%= @post.message %></p>
+      <div class="col-md-2">
+        <strong>Date:</strong>
+        <hr/>
+        <p class="text-center"><%= @post.date %></p>  
+      </div>
+
+      <div class="col-md-2">
+        <strong>Payment:</strong>
+        <hr/>
+        <p class="text-center"><%= @post.pay %></p>  
+      </div>
+
+      <div class="col-md-3">
+        <strong>Location:</strong>
+        <hr/>
+        <p class="text-center"><%= @post.location %></p>  
+      </div>
     </div>
 
-    <div class="col-md-2">
-      <strong>Date:</strong>
-      <hr/>
-      <p class="text-center"><%= @post.date %></p>  
+    <h1>Responses to this post:</h1>
+    <div class="cards">
+    <% if @responses.length != 0 %>
+      <% @responses.each do |response| %>
+        <% if response.bus_decision == 'accept' %>
+          <%= render partial: "band", locals: {band: response.band, post: @post, response: response, bus_decision: 'accept'}  %>
+        <% elsif response.bus_decision == 'decline' %>
+          <%= render partial: "band", locals: {band: response.band, post: @post, response: response, bus_decision: 'decline'}  %>
+        <% else %>
+          <%= render partial: "band", locals: {band: response.band, post: @post, response: response, bus_decision: ''}  %>
+        <% end %>
+      <%end%>
+    <% else %>
+      No responses to this post!
+    <% end %>
     </div>
-
-    <div class="col-md-2">
-      <strong>Payment:</strong>
-      <hr/>
-      <p class="text-center"><%= @post.pay %></p>  
-    </div>
-
-    <div class="col-md-3">
-      <strong>Location:</strong>
-      <hr/>
-      <p class="text-center"><%= @post.location %></p>  
-    </div>
+    <button class="ui button" onclick="window.location.href='<%=posts_path%>'">Return to your requests</button>
   </div>
-
-  <h1>Responses to this post:</h1>
-  <div class="cards">
-  <% if @responses.length != 0 %>
-    <% @responses.each do |response| %>
-      <% if response.bus_decision == 'accept' %>
-        <%= render partial: "band", locals: {band: response.band, post: @post, response: response, bus_decision: 'accept'}  %>
-      <% elsif response.bus_decision == 'decline' %>
-        <%= render partial: "band", locals: {band: response.band, post: @post, response: response, bus_decision: 'decline'}  %>
-      <% else %>
-        <%= render partial: "band", locals: {band: response.band, post: @post, response: response, bus_decision: ''}  %>
-      <% end %>
-    <%end%>
-  <% else %>
-    No responses to this post!
-  <% end %>
-  </div>
-  <button class="ui button" onclick="window.location.href='<%=posts_path%>'">Return to your requests</button>
 </div>
-

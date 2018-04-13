@@ -1,23 +1,24 @@
+<%
+=begin
+MODIFIED: David Levine 4/14/2018
+  -Added links to Profile, Requests, Apply for Gigs, View Active applications
+  -Updated old hardcoded links with link_to method
+=end
+%>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand" href="/homepage/band">ArtistBook</a>
   <ul class="navbar-nav">
     <li>
-      <a class="nav-link" href="/homepage/band">Home</a>
+      <%= link_to "Home", homepage_band_path, class: "nav-link"%>
+    </li>
+    <li>  
+      <%= link_to "Profile", band_path(current_band.id), class: "nav-link" %>
     </li>
     <li>
-      <a class="nav-link" href="">Profile</a>
+      <%= link_to "Requests", business_requests_path, class: "nav-link"%>
     </li>
     <li>
-      <a class="nav-link" href="">Requests</a>
-    </li>
-    <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-toggle="dropdown">
-        Gig Postings
-      </a>
-      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-        <a class="dropdown-item" href="">Apply for gigs</a>
-        <a class="dropdown-item" href="">View active applications</a>
-      </div>
+      <%= link_to "Apply for/managage gigs", posts_path, class: "nav-link"%>
     </li>
   </ul>
 

@@ -1,19 +1,29 @@
+<%
+=begin
+  MODIFIED: David Levine 04/14/2018
+    -Added correct link to profile
+    -Replaced hardcoded anchors with link_to methods
+
+=end
+%>
+
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand" href="/homepage/business">ArtistBook</a>
   <ul class="navbar-nav mr-auto">
     <li>
-      <a class="nav-link" href="/homepage/business">Home</a>
+     
+      <%= link_to "Home", homepage_business_path, class: "nav-link"%>
     </li>
     <li>
-      <a class="nav-link" href="#">Profile</a>
+      <%= link_to "Profile", business_path(current_business.id), class: "nav-link"%>
     </li>
     <li class="nav-item dropdown">
       <a class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-toggle="dropdown">
         Artist Requests
       </a>
       <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-        <a class="dropdown-item" href="/searches/new">Search/Request an artist</a>
-        <a class="dropdown-item" href="/business_requests">View active requests</a>
+        <%= link_to "Search/Request an artist", new_search_path, class: "dropdown-item"%>
+        <%= link_to "View active requests", business_requests_path, class: "dropdown-item"%>
       </div>
     </li>
     <li class="nav-item dropdown">
@@ -21,12 +31,9 @@
         Gig Postings
       </a>
       <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-        <a class="dropdown-item" href="/posts/new">Make a posting</a>
-        <a class="dropdown-item" href="/posts">View active positings</a>
+        <%= link_to "Make a posting", new_post_path, class: "dropdown-item"%>
+        <%= link_to "View active postings", posts_path, class: "dropdown-item"%>
       </div>
-    </li>
-    <li>
-      <a class="nav-link" href="/business_requests">My Active Requests</a>
     </li>
   </ul>
   <ul class="nav navbar-nav navbar-right">
