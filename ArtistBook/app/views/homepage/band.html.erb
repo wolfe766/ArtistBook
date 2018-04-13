@@ -1,14 +1,15 @@
-<h1>Homepage#band</h1>
-<p>
-  Band Name: <%= current_band.band_name %>
-</p>
-<p>
-  Address:   <%= current_band.address %>
-</p>
-<p>  
-  Email:     <%= current_band.email %>
-</p>
-<p> Here are some active jobs posts </p>
+<div class="card" style="width:100%;height:100%">
+  <img class="card-img-top" src="/assets/concert" alt="No image">
+  <div class="card-img-overlay">
+    <h1 class="card-title text-white"> Welcome, <%= current_band.band_name %> </h1>
+    <h3 class="card-text text-white"> 
+      <b> Band Name: </b> <%= current_band.band_name %> </br>
+      <b> Address:   </b> <%= current_band.address %> </br>
+      <b> Email:     </b> <%= current_band.email %> </br>
+    </h3>
+  </div>
+</div>
+    
 <div>
   <%= render :partial => 'homepage/post', :collection => @band_posts%>
 </div>

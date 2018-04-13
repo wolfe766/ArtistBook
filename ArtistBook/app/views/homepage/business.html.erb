@@ -1,11 +1,14 @@
-<h1>Homepage#business</h1>
-<p>Find me in app/views/homepage/home.html.erb</p>
+<div class="card" style="width:100%;height:100%">
+  <img class="card-img-top" src="/assets/drums_on_stage" alt="No image">
+  <div class="card-img-overlay">
+    <h1 class="card-title text-white"> Welcome, <%= current_business.business_name %> </h1>
+    <h3 class="card-text text-white"> 
+      <b> Business Name: </b> <%= current_business.business_name %> </br>
+      <b> Address:   </b> <%= current_business.address %> </br>
+      <b> Email:     </b> <%= current_business.email %> </br>
+    </h3>
+  </div>
+</div>
 
-<%= current_business.email %>
-
-<p><%= link_to 'Make A New Job Posting', new_post_path %></p>
-
-<p> Here are your current active job posts</p>
-<div>
 <%= render :partial => 'homepage/post', :collection => @posts %>
 </div>
