@@ -1,0 +1,2 @@
+class BusinessProfileController < ApplicationController
+end

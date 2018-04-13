@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'band_profile/profile'
+
   get 'developer/about_us'
 
   get 'developer/developer_info'
