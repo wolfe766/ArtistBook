@@ -9,7 +9,7 @@ html,body {
   #left {
     border-right: 2px solid black;
     height: 100%;
-    background: linear-gradient(to right, rgb(130, 229, 226) 0%, rgba(142, 211, 255, 1)10%, rgba(100,216,255,1) 20%,rgba(200,255,255,1) 88%,rgba(50, 131, 143, 1) 97%, rgba(60, 71, 81, 1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    background: linear-gradient(to right, rgb(150, 249, 246) 0%, rgba(122, 211, 255, 1)15%, rgba(100,216,255,1) 20%,rgba(200,255,255,1) 88%,rgba(50, 131, 143, 1) 97%, rgba(60, 71, 81, 1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 }
 
   #right{
@@ -104,13 +104,13 @@ html,body {
     float: left;
     margin: 0 !important;
     position: fixed;
-    top: 40px;
+    top: 25px;
     right: 180px;
 }
 .homepageNavItemRight{
     float: left;
     margin: 0 !important;
     position: fixed;
-    top: 40px;
+    top: 25px;
     right: 70px;
 }
