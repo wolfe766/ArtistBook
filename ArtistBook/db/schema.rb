@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180413034052) do
+ActiveRecord::Schema.define(version: 20180415022624) do
 
   create_table "band_profiles", force: :cascade do |t|
     t.string "bio"
@@ -95,7 +95,7 @@ ActiveRecord::Schema.define(version: 20180413034052) do
 
   create_table "posts", force: :cascade do |t|
     t.string "message"
-    t.datetime "date"
+    t.string "date"
     t.integer "business_id"
     t.float "pay"
     t.string "location"
