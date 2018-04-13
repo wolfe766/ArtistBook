@@ -13,29 +13,11 @@
 <% if !@posts%>
   <p>You haven't made any posts yet!</p>
 <% else %>
-<table>
-  <thead>
-    <tr>
-      <th>Message</th>
-      <th>Date</th>
-      <% if band_signed_in? %>
-      <th>Business</th>
-      <% end %>
-      <th>Pay</th>
-      <th>Location</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <%= render partial: "posts/post", collection: @posts %>
-  </tbody>
-</table>
-
+<%= render partial: "posts/post", collection: @posts %>
 <% end %>
 
 <br>
 
 <% if business_signed_in? %>
-<%= link_to 'Make New Band Request', new_post_path %>
+<button class="ui primary button" onclick="window.location.href=<%=new_post_path%>">Make New Band Request</button>
 <% end %>

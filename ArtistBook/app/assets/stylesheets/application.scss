@@ -16,6 +16,16 @@
  */
 ///stylesheets/application.scss
 
+/* 
+MODIFIED: David Levine 4/12/2018
+  -Added some padding to the top of site_content div
+*/
+
+.site_content {
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
 .navbar {
   height: 10% !important;
   font-size: 2em;

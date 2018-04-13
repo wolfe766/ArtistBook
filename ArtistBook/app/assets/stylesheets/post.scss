@@ -1,0 +1,31 @@
+//CREATED: David Levine 4/12/2018
+// Description: Styling for content in the posts page.
+
+.site_content {
+	.ui.card {
+	margin: 5px 10px;
+	display: inline-block;
+		.ui.sub.header {
+			font-size: 1.25em;
+		}
+
+		.content div.summary {
+			font-weight: normal;
+			font-size: 1.1em;
+			span {
+				font-weight: bold;
+				font-size: 1.15em;
+			}
+			
+		}
+
+		div.extra.content {
+			margin: auto;
+			text-align: center;
+			a {
+				font-weight: bolder;
+			}
+		}
+	}
+	
+}
