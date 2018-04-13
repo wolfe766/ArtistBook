@@ -1,18 +1,20 @@
-<div class="card" style="width:100%;height:100%">
-  <img class="card-img-top" src="/assets/drums_on_stage" alt="No image">
-  <div class="card-img-overlay">
-    <h1 class="card-title text-white"> Welcome, <%= current_business.business_name %> </h1>
-    <h3 class="card-text text-white"> 
-      <b> Business Name: </b> <%= current_business.business_name %> </br>
-      <b> Address:   </b> <%= current_business.address %> </br>
-      <b> Email:     </b> <%= current_business.email %> </br>
-    </h3>
+<!--
+  CREATED BY: Brandon Brown 4/16/2018
+  DESCRIPTION: Business home page 
+-->
+<div class="profileContent">
+  <div class="homepageContainer">
+      <%= image_tag current_business.photo.url(:medium) %>
+      <p class="profileName">Welcome, <%= current_business.business_name %>!</p>
   </div>
+
+  <p class="cardTitle"> Active Postings </p>
+  <div class="postsApplied containter"> 
+      <% if @posts.length > 0 %>
+          <%= render partial: "homepage/post", collection: @posts %>
+      <% else %>
+          <span>There is nothing to show!</span>
+      <% end %>
+  </div> 
 </div>
 
-<p><%= link_to 'Make A New Job Posting', new_post_path %></p>
-
-<p> Here are your current active job posts</p>
-<div>
- <%= render :partial => 'homepage/post', :collection => @posts %>
-</div> 
