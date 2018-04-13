@@ -8,12 +8,12 @@ html,body {
   
   #left {
     height: 100%;
-    background: linear-gradient(to right, rgb(0, 149, 176) 0%, rgba(0,216,255,1) 20%,rgba(0,216,255,1) 85%,rgba(0, 121, 143, 1) 92%, rgba(0, 61, 71, 1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    background: linear-gradient(to right, rgb(0, 149, 176) 0%, rgba(100,216,255,1) 20%,rgba(200,255,255,1) 85%,rgba(0, 121, 143, 1) 92%, rgba(0, 61, 71, 1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 }
 
   #right{
       height: 100%;
-      background: linear-gradient(to right,rgba(0, 66, 38, 1) 0%, rgba(0, 87, 49, 1) 5%,rgba(0,255,144,1) 15%,rgb(0, 255, 143) 80%, rgb(0, 142, 78) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */  
+      background: linear-gradient(to right,rgba(0, 66, 38, 1) 0%, rgba(0, 87, 49, 1) 5%,rgba(220,255,144,1) 15%,rgb(120, 255, 143) 80%, rgb(0, 142, 78) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */  
 }
 
 .loginCard{
