@@ -74,6 +74,11 @@
 }
 
 .request_form {
+  opacity: 0;
+  -webkit-animation: fadein 1s;
+  -moz-animation: fadein 1s;
+  animation: fadein 1s;
+  animation-fill-mode: forwards;
   display: inline-block;
   text-align: left;
 }

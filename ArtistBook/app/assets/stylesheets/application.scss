@@ -16,18 +16,28 @@
  */
 ///stylesheets/application.scss
 
-
 .navbar {
   height: 10% !important;
   font-size: 2em;
 }
 
 .navbar .nav-link {
-  font-size: 1.5em;
+  display: inline-block;
+  font-size: 1.4em;
+  padding-left: 25px !important;
+  padding-right: 25px !important;
+  color: #0842a0 !important;
 }
 
 .navbar .navbar-brand {
-  font-size: 1.7em;
+  font-style: italic;
+  font-weight: bold;
+  font-size: 1.6em;
+  color: #1d6ae5 !important;
+}
+
+.navbar .navbar-brand:hover {
+  background-color: transparent;
 }
 
 .site_content {
@@ -52,3 +62,13 @@
     opacity: 1;
   }
 }
+
+a {
+  color: #0842a0;
+
+  &:hover {
+    color: lightgray;
+    background-color: lightgray;
+  }
+}
+
