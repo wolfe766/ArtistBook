@@ -47,14 +47,14 @@ MODIFIED: David Levine 4/13/2018
   </div>
   <div class="extra content">
     <% if business_signed_in? %>
-    <button class="ui primary button" onclick="window.location.href=<%=post_path(post)%>">See Responses</button>
-    <button class="ui primary button" onclick="window.location.href=<%=edit_post_path(post)%>">Edit</button>
+    <button class="ui primary button" onclick="window.location.href='<%=post_path(post)%>'">See Responses</button>
+    <button class="ui primary button" onclick="window.location.href='<%=edit_post_path(post)%>'">Edit</button>
     </br>
     <div>
     <%= link_to 'Delete Request', post, method: :delete, data: { confirm: 'Are you sure?' } %>
     </div>
     <% else %>
-    <button class="ui primary button" onclick="window.location.href=<%=post_path(post)%>">Apply</button>
+    <button class="ui primary button" onclick="window.location.href='<%=post_path(post)%>'">View</button>
     <button class="ui primary button">Apply</button>
     <% end %>
   </div>

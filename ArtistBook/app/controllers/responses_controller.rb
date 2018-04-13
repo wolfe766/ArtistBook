@@ -29,6 +29,11 @@ class ResponsesController < ApplicationController
   # POST /responses.json
   def create
     @response = Response.new(response_params)
+    
+    if @response.band_id = current_band.id
+      render json: @response
+      return
+    end
 
     respond_to do |format|
       if @response.save
