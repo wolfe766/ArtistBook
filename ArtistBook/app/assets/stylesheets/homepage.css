@@ -98,3 +98,18 @@ html,body {
     top: 8px;
     left: 70px;
 }
+
+.homepageNavItemMid{
+    float: left;
+    margin: 0 !important;
+    position: fixed;
+    top: 40px;
+    right: 180px;
+}
+.homepageNavItemRight{
+    float: left;
+    margin: 0 !important;
+    position: fixed;
+    top: 40px;
+    right: 70px;
+}
