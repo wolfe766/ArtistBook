@@ -3,7 +3,7 @@
 
 ### Roles
 * Overall Project Manager: Henry Karagory
-* Coding Manager:
+* Coding Manager: Brandon Brown 
 * Testing Manager:
 * Documentation:
 
@@ -13,21 +13,21 @@ Also list if people worked together (pair programmed) on a particular section.
 
 * Development
   * Alec 
-  * Brandon
+  * Brandon - Implemented nav-bars partials, about us and developer info page, business home page
   * David
   * Henry: Implemented the search feature, ajax for submitting business requests and posts, and partials for search requests and Business Requests. 
   * Sam
 
 * Testing
   * Alec 
-  * Brandon
+  * Brandon - Preformed integration testeing for developer pages and application layout. 
   * David
   * Henry - Preformed integration testing for the search feature.
   * Sam
   
 * Documentation
   * Alec 
-  * Brandon
+  * Brandon - Documented code related to nav-bar partials, about us page, developer page, application layout file, and business home page. 
   * David
   * Henry - Documented code related to the search feature, ajax, partials, and other minor contributions.
   * Sam
