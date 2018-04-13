@@ -20,7 +20,7 @@ def get_login_type_or_redirect is_band_logged_in, is_business_logged_in
 
     if !is_band_logged_in && !is_business_logged_in
       flash[:alert] = "You must be logged into an account to access this page."
-      #TODO: Add correct redirect
+      redirect_to :root
     end
     
 end
