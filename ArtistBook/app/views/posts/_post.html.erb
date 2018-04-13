@@ -6,12 +6,14 @@
   
   <td><%= post.pay %></td>
   <td><%= post.location %></td>
+  <td style="display:none;" class="post-partial-post-id"><%= post.id %></td>
   <% if business_signed_in? %>
     <td><%= link_to 'Show Responses', post %></td>
     <td><%= link_to 'Edit Request', edit_post_path(post) %></td>
     <td><%= link_to 'Delete Request', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   <% else %>
     <td><%= link_to 'View', post%></td>
-    <td><button class="ui primary button">Apply</button></td> 
+    <td style="display:none;" class="post-partial-band-id"><%= current_band.id %></td>
+    <td><button class="ui primary button post-apply-button">Apply</button></td> 
   <% end %>
 </tr>
