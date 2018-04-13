@@ -29,9 +29,12 @@ class ResponsesController < ApplicationController
   # POST /responses.json
   def create
     @response = Response.new(response_params)
-    
-    if @response.band_id = current_band.id
-      render json: @response
+
+    if Response.where(band_id: @response.band_id, post_id: @response.post_id)[0]
+      respond_to do |format|
+        msg = { :status => :applied, :message => "Success!"}
+        format.json  { render :json => msg }
+      end
       return
     end
 

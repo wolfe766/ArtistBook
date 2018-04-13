@@ -46,7 +46,23 @@
   box-shadow: 1px 1px 5px #bfa96e
 }
 
-.request_form input[type=date]:focus, input[type=text]:focus, textarea:focus {
+.request_form input[type=text]:hover {
+  box-shadow: 1px 1px 5px #bfa96e
+}
+
+.request_form textarea:hover {
+  box-shadow: 1px 1px 5px #bfa96e
+}
+
+.request_form input[type=date]:focus {
+  box-shadow: 1px 1px 5px #bfa96e;
+}
+
+.request_form input[type=text]:focus {
+  box-shadow: 1px 1px 5px #bfa96e;
+}
+
+.request_form textarea:focus {
   box-shadow: 1px 1px 5px #bfa96e;
 }
 
