@@ -1,0 +1,17 @@
+<%= form_with(model: band_profile, local: true) do |form| %>
+  <% if band_profile.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(band_profile.errors.count, "error") %> prohibited this band_profile from being saved:</h2>
+
+      <ul>
+      <% band_profile.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

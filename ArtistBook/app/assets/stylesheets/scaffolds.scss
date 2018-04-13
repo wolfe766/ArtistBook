@@ -1,8 +1,7 @@
 body {
-  margin-left: 16%;
-  margin-right: 16%;
   background-color: #fff;
   color: #333;
+  margin: 33px;
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
   line-height: 18px;
@@ -20,6 +19,19 @@ pre {
   font-size: 11px;
 }
 
+a {
+  color: #000;
+
+  &:visited {
+    color: #666;
+  }
+
+  &:hover {
+    color: #fff;
+    background-color: #000;
+  }
+}
+
 th {
   padding-bottom: 5px;
 }
@@ -34,33 +46,14 @@ div {
   }
 }
 
-
 #notice {
-  animation: fadein 1.5s;
-  margin-top: 3%;
-  padding: 4px;
-  color: darkgreen;
-  background-color: #cbf4cb;
-  border: 1px solid green;
-  border-radius: 5px;
-  width: 23%;
-}
-
-#notice::after{
-  content: " ✓";
-
+  color: green;
 }
 
 .field_with_errors {
-  color: red;
-}
-
-.field_with_errors input[type="text"] {
-  box-shadow: 1px 1px 5px red;
-}
-
-.field_with_errors input[type="date"] {
-  box-shadow: 1px 1px 5px red;
+  padding: 2px;
+  background-color: red;
+  display: table;
 }
 
 #error_explanation {

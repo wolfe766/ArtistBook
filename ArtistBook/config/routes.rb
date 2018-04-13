@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
+  resources :business_profiles
+  resources :band_profiles
   get 'business_profile/profile'
-
-  get 'band_profile/profile'
 
   get 'developer/about_us'
 
