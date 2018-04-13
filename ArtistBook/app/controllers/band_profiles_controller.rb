@@ -69,6 +69,6 @@ class BandProfilesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def band_profile_params
-      params.fetch(:band_profile, {})
+      params.require(:band_profile).permit(:bio, :photo_path, :spotify_link)
     end
 end

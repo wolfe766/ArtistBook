@@ -17,7 +17,7 @@ class BandProfilesControllerTest < ActionDispatch::IntegrationTest
 
   test "should create band_profile" do
     assert_difference('BandProfile.count') do
-      post band_profiles_url, params: { band_profile: {  } }
+      post band_profiles_url, params: { band_profile: { bio: @band_profile.bio, photo_path: @band_profile.photo_path, spotify_link: @band_profile.spotify_link } }
     end
 
     assert_redirected_to band_profile_url(BandProfile.last)
@@ -34,7 +34,7 @@ class BandProfilesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update band_profile" do
-    patch band_profile_url(@band_profile), params: { band_profile: {  } }
+    patch band_profile_url(@band_profile), params: { band_profile: { bio: @band_profile.bio, photo_path: @band_profile.photo_path, spotify_link: @band_profile.spotify_link } }
     assert_redirected_to band_profile_url(@band_profile)
   end
 

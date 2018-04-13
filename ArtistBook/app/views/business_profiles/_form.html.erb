@@ -11,6 +11,16 @@
     </div>
   <% end %>
 
+  <div class="field">
+    <%= form.label :bio %>
+    <%= form.text_field :bio, id: :business_profile_bio %>
+  </div>
+
+  <div class="field">
+    <%= form.label :photo_path %>
+    <%= form.text_field :photo_path, id: :business_profile_photo_path %>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>

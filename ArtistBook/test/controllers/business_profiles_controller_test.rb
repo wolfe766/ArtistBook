@@ -17,7 +17,7 @@ class BusinessProfilesControllerTest < ActionDispatch::IntegrationTest
 
   test "should create business_profile" do
     assert_difference('BusinessProfile.count') do
-      post business_profiles_url, params: { business_profile: {  } }
+      post business_profiles_url, params: { business_profile: { bio: @business_profile.bio, photo_path: @business_profile.photo_path } }
     end
 
     assert_redirected_to business_profile_url(BusinessProfile.last)
@@ -34,7 +34,7 @@ class BusinessProfilesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update business_profile" do
-    patch business_profile_url(@business_profile), params: { business_profile: {  } }
+    patch business_profile_url(@business_profile), params: { business_profile: { bio: @business_profile.bio, photo_path: @business_profile.photo_path } }
     assert_redirected_to business_profile_url(@business_profile)
   end
 
