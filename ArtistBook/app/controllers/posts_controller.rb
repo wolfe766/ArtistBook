@@ -65,8 +65,8 @@ end
         redirect_to action: "index"
       end
     elsif band_signed_in?
-      @post = Post.find(params[:id])
-      @business_name = Business.find(@post.business_id).business_name
+      flash[:alert] = "You are not authorized to view this page."
+      redirect_to action: "index"
     end
   end
 

@@ -25,5 +25,7 @@
 <br>
 
 <% if business_signed_in? %>
-<button class="ui primary button" onclick="window.location.href=<%=new_post_path%>">Make New Band Request</button>
+<div class="request-btn">
+	<button class="ui button" onclick="window.location.href=<%=new_post_path%>">Make New Band Request</button>
+</div>
 <% end %>

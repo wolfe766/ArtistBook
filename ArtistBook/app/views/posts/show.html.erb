@@ -4,26 +4,9 @@
   MODIFIED: David Levine 04/13/2018
     -Styled post data with bootstrap container and styled responses with Semantic UI styling
 -->
-<!--
-
-
-<% if business_signed_in? %>
-<p>
-  <strong>Responses</strong>
-  
-</p>
-<% end %>
-
-<% if business_signed_in? %>
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<% else %>
-<%= link_to 'Apply', edit_post_path(@post) %> | <%#TODO: Change path to work for applying%>
-<% end %>
-<%= link_to 'Back', posts_path %>
--->
 
 <div class="container">
-  <h1>Gig Request Message</h1>
+  <h1>Gig Request</h1>
   <div class="row">
     <div class="col-md-4">
       <strong>Message:</strong>
@@ -31,19 +14,13 @@
       <p class="text-center"><%= @post.message %></p>
     </div>
 
-    <div class="col-md-1">
+    <div class="col-md-2">
       <strong>Date:</strong>
       <hr/>
       <p class="text-center"><%= @post.date %></p>  
     </div>
 
-    <div class="col-md-3">
-      <strong>Location:</strong>
-      <hr/>
-      <p class="text-center"><%= @post.location %></p>  
-    </div>
-
-    <div class="col-md-1">
+    <div class="col-md-2">
       <strong>Payment:</strong>
       <hr/>
       <p class="text-center"><%= @post.pay %></p>  
@@ -57,6 +34,7 @@
   </div>
 
   <h1>Responses to this post:</h1>
+  <div class="cards">
   <% if @responses.length != 0 %>
     <% @responses.each do |response| %>
       <%= render partial: "band", locals: {band: response.band}  %>
@@ -64,8 +42,7 @@
   <% else %>
     No responses to this post!
   <% end %>
-  <br/>
-  
+  </div>
   <button class="ui button" onclick="window.location.href='<%=posts_path%>'">Return to your requests</button>
 </div>
 
