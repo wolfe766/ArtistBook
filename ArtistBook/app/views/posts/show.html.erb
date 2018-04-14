@@ -1,43 +1,16 @@
 <!--
   MODIFIED: Henry Karagory and David Levine 04/13/2018
     -Added in support to show what bands have responded to a particular post.
+  MODIFIED: David Levine 04/13/2018
+    -Styled post data with bootstrap container and styled responses with Semantic UI styling
 -->
+<!--
 
-<p>
-  <strong>Message:</strong>
-  <%= @post.message %>
-</p>
-
-<p>
-  <strong>Date:</strong>
-  <%= @post.date %>
-</p>
-
-<p>
-  <strong>Business:</strong>
-  <%= @business_name %>
-</p>
-
-<p>
-  <strong>Pay:</strong>
-  <%= @post.pay %>
-</p>
-
-<p>
-  <strong>Location:</strong>
-  <%= @post.location %>
-</p>
 
 <% if business_signed_in? %>
 <p>
   <strong>Responses</strong>
-  <% if @responses %>
-    <% @responses.each do |response| %>
-      <%= response.band.band_name %>
-    <%end%>
-  <% else %>
-    No responses to this post!
-  <% end %>
+  
 </p>
 <% end %>
 
@@ -47,3 +20,52 @@
 <%= link_to 'Apply', edit_post_path(@post) %> | <%#TODO: Change path to work for applying%>
 <% end %>
 <%= link_to 'Back', posts_path %>
+-->
+
+<div class="container">
+  <h1>Gig Request Message</h1>
+  <div class="row">
+    <div class="col-md-4">
+      <strong>Message:</strong>
+      <hr/>
+      <p class="text-center"><%= @post.message %></p>
+    </div>
+
+    <div class="col-md-1">
+      <strong>Date:</strong>
+      <hr/>
+      <p class="text-center"><%= @post.date %></p>  
+    </div>
+
+    <div class="col-md-3">
+      <strong>Location:</strong>
+      <hr/>
+      <p class="text-center"><%= @post.location %></p>  
+    </div>
+
+    <div class="col-md-1">
+      <strong>Payment:</strong>
+      <hr/>
+      <p class="text-center"><%= @post.pay %></p>  
+    </div>
+
+    <div class="col-md-3">
+      <strong>Location:</strong>
+      <hr/>
+      <p class="text-center"><%= @post.location %></p>  
+    </div>
+  </div>
+
+  <h1>Responses to this post:</h1>
+  <% if @responses.length != 0 %>
+    <% @responses.each do |response| %>
+      <%= render partial: "band", locals: {band: response.band}  %>
+    <%end%>
+  <% else %>
+    No responses to this post!
+  <% end %>
+  <br/>
+  
+  <button class="ui button" onclick="window.location.href='<%=posts_path%>'">Return to your requests</button>
+</div>
+

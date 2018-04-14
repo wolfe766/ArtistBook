@@ -29,6 +29,6 @@ $( document ).ready(function() {
 		// Remove the aply button, replace with green success button.
 		var parent = $(this).parent();
 		$(this).remove();
-		parent.append('<button class=\'btn btn-success\'>Already applied!</button>');
+		parent.append('<button class=\'btn btn-success\'>Applied!</button>');
 	});
 });
