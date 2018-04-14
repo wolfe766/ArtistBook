@@ -27,9 +27,18 @@ Description: a partial using Semantic UI card styling to render users
     </div>
   </div>
   <div class="extra content">
+    <div style="display:none;" class="band-partial-band-id"><%= band.id %></div>
+    <div style="display:none;" class="band-partial-post-id"><%= post.id %></div>
+    <div style="display:none;" class="band-partial-response-id"><%= response.id %></div>
+    <% if bus_decision == 'accept' %>
+        <button class='btn btn-success'>Accepted!</button>
+    <% elsif bus_decision == 'decline' %>
+      '<button class='btn btn-danger'>Declined</button>'
+    <% else %>
+      <button class="ui primary button accept-band-response-button">Accept</button>
+      <button class="ui primary button decline-band-response-button">Decline</button>
+    <% end %>
     
-    <button class="ui primary button">Accept</button>
-    <button class="ui primary button">Decline</button>
     </br>
 
   </div>
