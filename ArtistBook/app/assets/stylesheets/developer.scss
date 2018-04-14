@@ -1,3 +1,40 @@
 // Place all the styles related to the Developer controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#wrap {
+    width: 610px;
+    height: 270px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    clear: both;
+    padding-top: 20px;
+
+}
+
+.spacing {
+    height: 500px;
+}
+
+.left {
+    width: 200px;
+    height: 250px;
+    float: left;
+    border: 1px solid black;
+}
+
+.rightTop {
+    width: 400px;
+    background-color: #0842a0 !important;
+    height: 50px;
+    float: right;
+    text-align: center;
+    border: 1px solid black;
+}
+
+.rightBottom {
+    width: 400px;
+    height: 200px;
+    float: right;
+    text-align: left;
+}
