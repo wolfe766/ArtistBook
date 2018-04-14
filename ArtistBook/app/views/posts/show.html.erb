@@ -37,7 +37,13 @@
   <div class="cards">
   <% if @responses.length != 0 %>
     <% @responses.each do |response| %>
-      <%= render partial: "band", locals: {band: response.band}  %>
+      <% if response.bus_decision == 'accept' %>
+        <%= render partial: "band", locals: {band: response.band, post: @post, response: response, bus_decision: 'accept'}  %>
+      <% elsif response.bus_decision == 'decline' %>
+        <%= render partial: "band", locals: {band: response.band, post: @post, response: response, bus_decision: 'decline'}  %>
+      <% else %>
+        <%= render partial: "band", locals: {band: response.band, post: @post, response: response, bus_decision: ''}  %>
+      <% end %>
     <%end%>
   <% else %>
     No responses to this post!
