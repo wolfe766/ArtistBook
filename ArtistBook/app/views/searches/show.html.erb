@@ -1,22 +1,9 @@
-<p>
-  <strong>Genre:</strong>
-  <%= @search.genre %>
-</p>
+<div class="search">
+	<h1>Search Results</h1>
 
-<p>
-  <strong>Business:</strong>
-  <%= @search.business.business_name %>
-</p>
-
-<table>
-	<tr>
-		<th>Band Name</th>
-		<th>Genre</th>
-		<th>Phone</th>
-		<th>Address</th>
-	</tr>
-	<%= render :partial => 'searches/band', :collection => @bands %>
-</table>
-
-<%= link_to 'Edit', edit_search_path(@search) %> |
-<%= link_to 'Back', searches_path %>
+	<% if @bands.length !=0 %>
+		<%= render :partial => 'searches/band', :collection => @bands %>
+	<% else %>
+		<h2> There are no bands matching your search </h2> <%= link_to "New search", new_search_path, class: "btn btn-primary" %>
+	<% end %>
+</div>
