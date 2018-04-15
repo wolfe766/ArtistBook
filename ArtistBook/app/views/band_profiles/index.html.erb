@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Band Profiles</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Bio</th>
+      <th>Photo path</th>
+      <th>Spotify link</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @band_profiles.each do |band_profile| %>
+      <tr>
+        <td><%= band_profile.bio %></td>
+        <td><%= band_profile.photo_path %></td>
+        <td><%= band_profile.spotify_link %></td>
+        <td><%= link_to 'Show', band_profile %></td>
+        <td><%= link_to 'Edit', edit_band_profile_path(band_profile) %></td>
+        <td><%= link_to 'Destroy', band_profile, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Band Profile', new_band_profile_path %>

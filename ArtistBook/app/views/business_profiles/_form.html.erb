@@ -1,0 +1,27 @@
+<%= form_with(model: business_profile, local: true) do |form| %>
+  <% if business_profile.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(business_profile.errors.count, "error") %> prohibited this business_profile from being saved:</h2>
+
+      <ul>
+      <% business_profile.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :bio %>
+    <%= form.text_field :bio, id: :business_profile_bio %>
+  </div>
+
+  <div class="field">
+    <%= form.label :photo_path %>
+    <%= form.text_field :photo_path, id: :business_profile_photo_path %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

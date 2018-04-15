@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Bio:</strong>
+  <%= @business_profile.bio %>
+</p>
+
+<p>
+  <strong>Photo path:</strong>
+  <%= @business_profile.photo_path %>
+</p>
+
+<%= link_to 'Edit', edit_business_profile_path(@business_profile) %> |
+<%= link_to 'Back', business_profiles_path %>
