@@ -11,12 +11,14 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :genre %>
-    <%= form.text_field :genre, id: :search_genre %>
-  </div>
+  <div class="search-form">
+    <div class="field">
+      <%= form.label :genre %>
+      <%= form.text_field :genre, id: :search_genre %>
+    </div>
 
-  <div class="actions">
-    <%= form.submit %>
+    <div class="actions">
+      <%= form.submit({ value: "Search", class: "btn btn-primary"}) %>
+    </div>
   </div>
 <% end %>
