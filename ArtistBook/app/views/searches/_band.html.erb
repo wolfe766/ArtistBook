@@ -32,6 +32,7 @@
     <div style="display:none;" class="searches-band-partial-band-id"><%= band.id %></div>
     <div style="display:none;" class="searches-band-partial-business-id"><%= current_business.id %></div>
     <%= link_to "Request Band", new_business_request_path(band_id: band.id), method: :get, class: "btn btn-info", "role" => "button", "style" => "color:white" %>
+    <%= link_to "View Profile", band_path(band.id), method: :get, class: "btn btn-info", "role" => "button", "style" => "color:white" %>
     </br>
   </div>
 </div>

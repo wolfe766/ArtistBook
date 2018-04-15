@@ -20,6 +20,9 @@ MODIFIED: David Levine 4/14/2018
 .post input[type=date]:hover, input[type=text]:hover, textarea:hover {
   box-shadow: 1px 1px 5px #bfa96e
 }
+.post textarea {
+  resize: none;
+}
 
 .post input[type=date]:focus {
   box-shadow: 1px 1px 5px #bfa96e;
