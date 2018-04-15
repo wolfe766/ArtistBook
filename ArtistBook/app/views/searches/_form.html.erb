@@ -16,7 +16,10 @@
       <%= form.label :genre %>
       <%= form.text_field :genre, id: :search_genre %>
     </div>
-
+    <div class="field">
+      <%= form.label :band_name %>
+      <%= form.text_field :band_name, id: :search_band_name %>
+    </div>
     <div class="actions">
       <%= form.submit({ value: "Search", class: "btn btn-primary"}) %>
     </div>
