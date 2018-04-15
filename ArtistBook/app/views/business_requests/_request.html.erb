@@ -1,0 +1,65 @@
+<!-- 
+Created: Henry Karagory 04/14/2018
+Description: a partial using Semantic UI card styling to render requests
+
+-->
+<div class="ui card">
+  <div class="content">
+    <div class="header"><%= request.business.business_name%></div>
+  </div>
+
+  <div class="content">
+    <div class="ui small feed">
+      <div class="event">
+        <div class="content">
+          <div class="summary request-pay">
+             <span>Pay:</span> <%= request.pay %>
+          </div>
+        </div>
+      </div>
+      <div class="event">
+        <div class="content">
+          <div class="summary request-time">
+             <span>Time:</span> <%= request.time %>
+          </div>
+        </div>
+      </div>
+      <div class="event">
+        <div class="content">
+          <div class="summary request-date">
+             <span>Date:</span> <%= request.date %>
+          </div>
+        </div>
+      </div>
+      <div class="event">
+        <div class="content">
+          <div class="summary request-location">
+             <span>Location:</span> <%= request.location %>
+          </div>
+        </div>
+      </div>
+      <div class="event">
+        <div class="content">
+          <div class="summary request-message">
+             <span>Message:</span> <%= request.message %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="extra content">
+    <div style="display:none;" class="request-partial-band-id"><%= request.band.id  %></div>
+    <div style="display:none;" class="request-partial-request-id"><%= request.id  %></div>
+    <div style="display:none;" class="request-partial-business-id"><%= request.business.id %></div>
+    <div style="display:none;" class="band-partial-response-id"><%=  %></div>
+    <% if request.band_decision == true %>
+      <button class="btn btn-success accept-business-request-button">Accepted</button>
+    <% elsif request.band_decision == false %>
+      <button class="btn btn-danger decline-business-request-button">Declined</button>
+    <% else %>
+      <button class="btn btn-success accept-business-request-button">Accept</button>
+      <button class="btn btn-danger decline-business-request-button">Decline</button>
+    <% end %>
+    </br>
+  </div>
+</div>
