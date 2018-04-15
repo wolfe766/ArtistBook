@@ -1,3 +1,10 @@
+<%
+=begin
+	MODIFIED: David Levine 4/15/2018
+		-Updated contact and about us page with proper links. 	
+=end
+%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -29,8 +36,8 @@
 			<div class="col" id="right">
 				<div class="container homepageNav text-right">
 					<h1 class="homepageNavItemLeft">ArtistBook</h1>
-					<a class="homepageNavItemMid homepageNavItem" href="https://www.w3schools.com">Contact</a>
-					<a class="homepageNavItemRight homepageNavItem" href="https://www.w3schools.com">About</a>        
+					<%= link_to, "Contact", developer_developer_info_path, class: "homepageNavItemMid homepageNavItem" %>
+					<%= link_to, "About", developer_about_us_path, class: "homepageNavItemMid homepageNavItem" %>     
 				</div>
 				<div id="businessBanner" class="card bannerCard text-center">
 					<h3>Looking For Talent?</h3>
