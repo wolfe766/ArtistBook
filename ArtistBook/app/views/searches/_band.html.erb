@@ -1,7 +1,37 @@
-<tr>
-	<td><%= band.band_name %></td>
-	<td><%= band.genre %></td>
-	<td><%= band.phone %></td>
-	<td><%= band.address %></td>
-	<td><%= link_to "Request Band", new_business_request_path(band_id: band.id), method: :get %></td>
-</tr>
+<div class="ui card">
+  <div class="content">
+    <div class="header"><%= band.band_name %></div>
+  </div>
+
+  <div class="content">
+    <div class="ui small feed">
+      <div class="event">
+        <div class="content">
+          <div class="summary">
+             <span>Genre:</span> <%= band.genre %>
+          </div>
+        </div>
+      </div>
+      <div class="event">
+        <div class="content">
+          <div class="summary">
+             <span>Phone Contact:</span> <%= band.phone %>
+          </div>
+        </div>
+      </div>
+      <div class="event">
+        <div class="content">
+          <div class="summary">
+             <span>Address:</span> <%= band.address %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="extra content">
+    <div style="display:none;" class="searches-band-partial-band-id"><%= band.id %></div>
+    <div style="display:none;" class="searches-band-partial-business-id"><%= current_business.id %></div>
+    <%= link_to "Request Band", new_business_request_path(band_id: band.id), method: :get, class: "btn btn-info", "role" => "button", "style" => "color:white" %>
+    </br>
+  </div>
+</div>
