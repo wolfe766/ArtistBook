@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180413034052) do
+ActiveRecord::Schema.define(version: 20180415055703) do
 
   create_table "band_profiles", force: :cascade do |t|
     t.string "bio"
@@ -41,6 +41,10 @@ ActiveRecord::Schema.define(version: 20180413034052) do
     t.datetime "locked_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "photo_file_name"
+    t.string "photo_content_type"
+    t.integer "photo_file_size"
+    t.datetime "photo_updated_at"
     t.index ["email"], name: "index_bands_on_email", unique: true
     t.index ["reset_password_token"], name: "index_bands_on_reset_password_token", unique: true
     t.index ["unlock_token"], name: "index_bands_on_unlock_token", unique: true
@@ -88,6 +92,10 @@ ActiveRecord::Schema.define(version: 20180413034052) do
     t.datetime "locked_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "photo_file_name"
+    t.string "photo_content_type"
+    t.integer "photo_file_size"
+    t.datetime "photo_updated_at"
     t.index ["email"], name: "index_businesses_on_email", unique: true
     t.index ["reset_password_token"], name: "index_businesses_on_reset_password_token", unique: true
     t.index ["unlock_token"], name: "index_businesses_on_unlock_token", unique: true
@@ -95,7 +103,7 @@ ActiveRecord::Schema.define(version: 20180413034052) do
 
   create_table "posts", force: :cascade do |t|
     t.string "message"
-    t.datetime "date"
+    t.string "date"
     t.integer "business_id"
     t.float "pay"
     t.string "location"
