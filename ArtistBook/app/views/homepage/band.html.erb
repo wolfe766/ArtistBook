@@ -27,14 +27,18 @@
   <%if @has_requests%>
     <div class="requestsActive container"><%= link_to "You have an active request! Click to view", business_requests_path%></div>
   <%end%>
-  <div class="postsApplied container">
-    <p class="cardTitle">Recent Posts You've Applied For</p>
-    <%= render partial: "homepage/post", collection: @posts_applied, locals: {applied: true} %>
-  </div>
-
+  <% if @posts_applied.count > 0 %>
     <div class="postsApplied container">
-    <p class="cardTitle">Posts You May Be Interested In</p>
-    <%= render partial: "homepage/post", collection: @posts_not_applied, locals: {applied: false} %>
-  </div>
+      <p class="cardTitle">Recent Posts You've Applied For</p>
+      <%= render partial: "homepage/post", collection: @posts_applied, locals: {applied: true} %>
+    </div>
+  <% end %>
+
+  <% if @posts_not_applied.count > 0 %>
+    <div class="postsApplied container">
+      <p class="cardTitle">Posts You May Be Interested In</p>
+      <%= render partial: "homepage/post", collection: @posts_not_applied, locals: {applied: false} %>
+    </div>
+  <% end %>
 </div>
 

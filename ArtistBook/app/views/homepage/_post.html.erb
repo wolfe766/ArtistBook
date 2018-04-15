@@ -50,9 +50,21 @@ MODIFIED: Henry Karagory and David Levine 4/13/2018
     </div>
   </div>
   <div class="extra content">
+    <div style="display:none;" class="post-partial-post-id"><%= post.id %></div>
+    <% if business_signed_in? %>
+    <button class="ui primary button" onclick="window.location.href='<%=post_path(post)%>'">See Responses</button>
+    <button class="ui primary button" onclick="window.location.href='<%=edit_post_path(post)%>'">Edit</button>
+    </br>
+    <div>
+    <%= link_to 'Delete Request', post, method: :delete, data: { confirm: 'Are you sure?' } %>
+    </div>
+    <% else %>
+    <div style="display:none;" class="post-partial-band-id"><%= current_band.id %></div>
     <% if applied %>
-    <button class='btn btn-success'>Applied!</button>
+    <button class='btn btn-success'>Already applied!</button>
     <% else %>
     <button class="ui primary button post-apply-button">Apply</button>
-    <% end %>  </div>
+    <% end %>
+    <% end %>
+  </div>
 </div>

@@ -46,11 +46,16 @@ html,body {
     margin-top: 10px;
     font-size: .8vw !important;
     width: 80%;
-    box-shadow: 2px 2px black;
+    box-shadow: 1px 1px black;
 }
 
 .welcome {
     color: #1d6ae5;
+}
+
+#bangSignUp{
+    background-color: grey !important;
+    color: white !important;
 }
 
 #bandBanner{
@@ -92,7 +97,7 @@ html,body {
 }
 
 .homepageNavItem{
-    color: white;
+    color: white !important;
     padding: 20px;
 }
 
@@ -209,3 +214,4 @@ html,body {
         color:white !important;
 
 }
+
