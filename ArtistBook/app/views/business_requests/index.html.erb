@@ -46,8 +46,11 @@
   </div>
 
     <br>
-    <% else %>
-    <h1> Oops! You dont have permission to view this page!</h1>
-    <%= link_to 'Home', '/' %>
-  </div>
+<% elsif band_signed_in?%>
+    <div class="request_index">
+    <h1>Business Requests</h1>
+    <div id="animation">
+      <h2>You currently have <span class="count"><%= @business_requests.count %></span> active requests.</h2>
+      <%= render partial: "business_requests/request", collection: @business_requests %>
+    </div>
 <% end %>
