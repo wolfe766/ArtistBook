@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180410144445) do
+ActiveRecord::Schema.define(version: 20180413034052) do
+
+  create_table "band_profiles", force: :cascade do |t|
+    t.string "bio"
+    t.string "photo_path"
+    t.string "spotify_link"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "bands", force: :cascade do |t|
     t.string "band_name"
@@ -36,6 +44,13 @@ ActiveRecord::Schema.define(version: 20180410144445) do
     t.index ["email"], name: "index_bands_on_email", unique: true
     t.index ["reset_password_token"], name: "index_bands_on_reset_password_token", unique: true
     t.index ["unlock_token"], name: "index_bands_on_unlock_token", unique: true
+  end
+
+  create_table "business_profiles", force: :cascade do |t|
+    t.string "bio"
+    t.string "photo_path"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "business_requests", force: :cascade do |t|

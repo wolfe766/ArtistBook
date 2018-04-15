@@ -7,25 +7,27 @@
   	 applied to
 =end
 %>
-<% if business_signed_in? %>
-<h1>Your Business's Requests</h1>
-<% #check if user has made any posts yet. otherwise notify them they need to make post %>
-<% if !@posts%>
-  <p>You haven't made any posts yet!</p>
-<% else %>
-<%= render partial: "posts/post", collection: @posts %>
-<% end %>
+<div class="post">
+	<% if business_signed_in? %>
+	<h1>Your Business's Requests</h1>
+	<% #check if user has made any posts yet. otherwise notify them they need to make post %>
+	<% if !@posts%>
+	  <p>You haven't made any posts yet!</p>
+	<% else %>
+	<%= render partial: "posts/post", collection: @posts %>
+	<% end %>
 
-<% else %>
-<h1>All Business Requests</h1>
-<%= render partial: "posts/post", collection: @posts_applied, locals: {applied: true} %>
-<%= render partial: "posts/post", collection: @posts_not_applied, locals: {applied: false} %>
-<% end %>
+	<% else %>
+	<h1>All Business Requests</h1>
+	<%= render partial: "posts/post", collection: @posts_applied, locals: {applied: true} %>
+	<%= render partial: "posts/post", collection: @posts_not_applied, locals: {applied: false} %>
+	<% end %>
 
-<br>
+	<br>
 
-<% if business_signed_in? %>
-<div class="request-btn">
-	<button class="ui button" onclick="window.location.href=<%=new_post_path%>">Make New Band Request</button>
+	<% if business_signed_in? %>
+	<div class="request-btn">
+		<button class="ui button" onclick="window.location.href=<%=new_post_path%>">Make New Band Request</button>
+	</div>
 </div>
 <% end %>

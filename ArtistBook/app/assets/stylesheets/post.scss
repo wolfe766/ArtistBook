@@ -1,5 +1,67 @@
-//CREATED: David Levine 4/12/2018
-// Description: Styling for content in the posts page.
+/*
+CREATED: David Levine 4/12/2018
+Description: Styling for content in the posts page.
+
+MODIFIED: David Levine 4/14/2018
+	-Copied and modified stylings from both the searches and buisness requests SCSS styling sheets
+
+*/
+
+.post h1 {
+  color: #1d6ae5;
+  font-size: 3em;
+}
+
+.post h2{
+  color: #1d6ae5;
+  font-size: 2em;
+  margin-right: 6%;
+}
+
+.post-button{
+  background-color: #1d6ae5;
+  color: white;
+  border: none;
+  padding: 15px;
+  transition: all 0.1s;
+  cursor: pointer;
+  margin-bottom: 5%;
+  margin-top: 5%;
+}
+
+.post-button:hover{
+  opacity: 0.8;
+  color: white;
+  border: none;
+  transform: scale(1.05);
+  }
+
+.post-form input[type=text] {
+  width: 70%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.post-form input[type=text]:focus {
+  box-shadow: 1px 1px 5px #bfa96e;
+}
+
+.post-form {
+  opacity: 0;
+  -webkit-animation: fadein 1s;
+  -moz-animation: fadein 1s;
+  animation-fill-mode: forwards;
+  display: inline-block;
+  text-align: left;
+}
+
+.post-form label {
+  color: #0842a0;
+}
 
 .site_content {
 	.cards {
