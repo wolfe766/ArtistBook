@@ -1,16 +1,40 @@
-<div class="card" style="width:100%;height:100%">
-  <img class="card-img-top" src="/assets/concert" alt="No image">
-  <div class="card-img-overlay">
-    <h1 class="card-title text-white"> Welcome, <%= current_band.band_name %> </h1>
-    <h3 class="card-text text-white"> 
-      <b> Band Name: </b> <%= current_band.band_name %> </br>
-      <b> Address:   </b> <%= current_band.address %> </br>
-      <b> Email:     </b> <%= current_band.email %> </br>
-    </h3>
+
+<div class="profileContent">
+  <div class="profileContainer">
+      <%= image_tag current_band.photo.url(:medium) %>
+      <p class="profileName"> <%= current_band.band_name %></p>
   </div>
-</div>
-    
-<div>
-  <%= render :partial => 'homepage/post', :collection => @posts%>
+  <table class="bioContainer">
+    <tr>
+      <td class="bioCategory">Genre: </td>
+      <td><%= current_band.genre %> </td>
+    </tr>
+    <tr>
+      <td class="bioCategory">Email: </td>
+      <td><%= current_band.email %> </td>
+    </tr>
+    <tr>
+      <td class="bioCategory">Phone: </td>
+      <td><%= current_band.phone%> </td>
+    </tr>
+    <tr>
+      <td class="bioCategory">Address: </td>
+      <td><%= current_band.address %> </td>
+    </tr>
+  </table>
+        <div class="bioEdit"><%= link_to "Click To Edit", edit_band_path(current_band.id) %> </div>
+
+  <%if @has_requests%>
+    <div class="requestsActive container"><%= link_to "You have an active request! Click to view", business_requests_path%></div>
+  <%end%>
+  <div class="postsApplied container">
+    <p class="cardTitle">Recent Posts You've Applied For</p>
+    <%= render partial: "homepage/post", collection: @posts_applied, locals: {applied: true} %>
+  </div>
+
+    <div class="postsApplied container">
+    <p class="cardTitle">Posts You May Be Interested In</p>
+    <%= render partial: "homepage/post", collection: @posts_not_applied, locals: {applied: false} %>
+  </div>
 </div>
 

@@ -1,32 +1,29 @@
-<p id="notice"><%= notice %></p>
-
-<%= image_tag @band.photo.url(:thumbnail) %>
-
-
-<p>
-  <strong>Band name</strong>
-  <%= @band.band_name %>
-</p>
-
-<p>
-  <strong>Genre</strong>
-  <%= @band.genre %>
-</p>
-
-<p>
-  <strong>Phone</strong>
-  <%= @band.phone %>
-</p>
-
-<p>
-  <strong>Address</strong>
-  <%= @band.address %>
-</p>
-
-<p>
-  <strong>Email:</strong>
-  <%= @band.email %>
-</p>
-
-<%= link_to 'Edit', edit_band_path(@band) %> |
-<%= link_to 'Back', bands_path %>
+<div class="profileContent">
+  <div class="profileContainer">
+      <%= image_tag @band.photo.url(:medium) %>
+      <p class="profileName"> <%= @band.band_name %></p>
+  </div>
+  <table class="bioContainer">
+    <tr>
+      <td class="bioCategory">Genre: </td>
+      <td><%= @band.genre %> </td>
+    </tr>
+    <tr>
+      <td class="bioCategory">Email: </td>
+      <td><%= @band.email %> </td>
+    </tr>
+    <tr>
+      <td class="bioCategory">Phone: </td>
+      <td><%= @band.phone%> </td>
+    </tr>
+    <tr>
+      <td class="bioCategory">Address: </td>
+      <td><%= @band.address %> </td>
+    </tr>
+  </table>
+</div>
+<div>
+<%if business_signed_in?%>
+<%= link_to "Request This Band", new_business_request_path(band_id: @bandID), method: :get, class: "btn btn-info bigBtn", "role" => "button", "style" => "color:white" %>
+<%end%>
+</div>

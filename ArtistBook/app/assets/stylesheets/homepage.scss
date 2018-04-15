@@ -127,3 +127,85 @@ html,body {
     top: 25px;
     right: 70px;
 }
+
+.profileContent{
+    margin: auto;
+}
+
+.profileContainer{
+    margin: auto;
+    background-color: rgb(230,230,230);
+    box-shadow: 0 1px 1px grey;
+}
+
+.profileName{
+    font-size: 3em;
+    font-style: italic;
+    font-weight: bold;
+    margin-left: 20%;
+    display: inline-block;
+    color: blue;
+}
+.bioCategory{
+    color: blue;
+    text-align: right;
+}
+
+.bioContainer{
+    font-size: 1.5em;
+    margin: auto;
+    box-shadow: 0 1px 1px grey;
+    margin-top: 50px;
+    width: 60%;
+}
+
+.bioContainer tr td{
+    font-size: 1.3em;
+    padding: 20px;
+}
+
+.bioContainer tr{
+    margin: 50px 20px;
+}
+
+.postsApplied{
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    background-color: rgb(230,230,230);
+    box-shadow: 0 1px 1px grey;
+}
+
+.cardTitle{
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+.bioEdit{
+    text-align: center;
+    margin-top: 2px;
+    color:blue;
+}
+
+.bigBtn{
+    padding:20px 40px !important;
+    font-size: 1.5em;
+    margin: auto;
+    margin-top: 10px;
+    display: block !important;
+    width: 40%;
+}
+
+.requestsActive{
+    background-color: orange;
+    font-size: 1.2em;
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+}
+
+.requestsActive a{
+        color:white !important;
+
+}

@@ -10,6 +10,7 @@ class BandsController < ApplicationController
   # GET /bands/1
   # GET /bands/1.json
   def show
+    @bandID = @band.id
   end
 
   # GET /bands/new
