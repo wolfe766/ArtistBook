@@ -7,7 +7,7 @@ class BusinessRequestsController < ApplicationController
     if business_signed_in?
       @business_requests = BusinessRequest.where(business_id: current_business.id)
     elsif band_signed_in?
-      @business_requests = BusinessRequest.where(business_id: current_band.id)
+      @business_requests = BusinessRequest.where(band_id: current_band.id)
     end
   end
 
@@ -51,7 +51,6 @@ class BusinessRequestsController < ApplicationController
   def update
     respond_to do |format|
       if @business_request.update(business_request_params)
-        flash[:notice] = "Your request has been successfully updated."
         format.html { redirect_to :action => "index" }
         format.json { render :index, status: :ok, location: @business_request }
       else
