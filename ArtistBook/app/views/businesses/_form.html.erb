@@ -12,6 +12,11 @@
   <% end %>
 
   <div class="field">
+    <%= form.label :photo %>
+    <%= form.file_field :photo, id: :business_photo_name %>
+  </div>
+
+  <div class="field">
     <%= form.label :business_name %>
     <%= form.text_field :business_name, id: :business_business_name %>
   </div>

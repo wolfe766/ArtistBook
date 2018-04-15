@@ -28,7 +28,7 @@ MODIFIED: David Levine 04/14/2018
 
   <div class="field">
     <%= form.label :date %>
-    <%= form.text_field :date, id: :post_date %>
+    <%= form.text_field :date, id: :post_date, type: "date" %>
   </div>
 
   <div class="field">
@@ -37,7 +37,7 @@ MODIFIED: David Levine 04/14/2018
   </div>
 
   <div class="field">
-    <%= form.label :location %>
+    <%= form.label :location %> (Leave blank to use your business's address)
     <%= form.text_field :location, id: :post_location %>
   </div>
 

@@ -106,12 +106,17 @@ end
       -Changed post so that business_id is assigned from whatever 
        business  is signed in and business doesn't need to specify 
        that it's them.
+
+  MODIFIED: David Levine 4/14/2018
+      -If a form is submitted with location blank, the business's default
+       location will be used.
 =end
   def create
     get_login_type_or_redirect band_signed_in?, business_signed_in?
     if business_signed_in?
       @post = Post.new(post_params)
       @post.business_id = current_business.id
+      @post.location = current_business.address if @post.location == ""
 
       respond_to do |format|
         if @post.save

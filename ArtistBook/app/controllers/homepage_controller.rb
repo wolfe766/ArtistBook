@@ -7,7 +7,7 @@ class HomepageController < ApplicationController
   end
 
   def band
-    @band_posts = Post.all
+    @posts_applied = Response.where(band_id: current_band.id).map{|response| response.post}
   end
 
   def home

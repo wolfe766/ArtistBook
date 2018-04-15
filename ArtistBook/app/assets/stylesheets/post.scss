@@ -7,6 +7,24 @@ MODIFIED: David Levine 4/14/2018
 
 */
 
+.post input[type=date] {
+  width: 70%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.post input[type=date]:hover, input[type=text]:hover, textarea:hover {
+  box-shadow: 1px 1px 5px #bfa96e
+}
+
+.post input[type=date]:focus {
+  box-shadow: 1px 1px 5px #bfa96e;
+}
+
 .post h1 {
   color: #1d6ae5;
   font-size: 3em;

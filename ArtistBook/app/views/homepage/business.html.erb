@@ -10,5 +10,9 @@
   </div>
 </div>
 
-<%= render :partial => 'homepage/post', :collection => @posts %>
-</div>
+<p><%= link_to 'Make A New Job Posting', new_post_path %></p>
+
+<p> Here are your current active job posts</p>
+<div>
+ <%= render :partial => 'homepage/post', :collection => @posts %>
+</div> 

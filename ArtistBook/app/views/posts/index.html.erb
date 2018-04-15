@@ -5,6 +5,9 @@
   MODIFIED: Henry Karagory and David Levnie 04/13/2018
   	-Now render for bands what posts they have applied to and what they have not
   	 applied to
+  MODIFIED: David Levine 04/14/2018
+  	-Posts are now seperated into what's been applied to and what hasn't
+  	 been applied to
 =end
 %>
 <div class="post">
@@ -18,9 +21,16 @@
 	<% end %>
 
 	<% else %>
-	<h1>All Business Requests</h1>
-	<%= render partial: "posts/post", collection: @posts_applied, locals: {applied: true} %>
-	<%= render partial: "posts/post", collection: @posts_not_applied, locals: {applied: false} %>
+		<% if @posts_applied.length != 0 %>
+			<h1>Gigs you've applied to</h1>
+			<%= render partial: "posts/post", collection: @posts_applied, locals: {applied: true} %>
+		<%end%>
+		<h1>Open Gigs</h1>
+		<% if @posts_not_applied.length != 0 %>
+			<%= render partial: "posts/post", collection: @posts_not_applied, locals: {applied: false} %>
+		<% else %>
+			<p>There's nothing here for you to apply to!</p>
+		<% end %>
 	<% end %>
 
 	<br>
