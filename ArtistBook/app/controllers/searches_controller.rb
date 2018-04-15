@@ -11,7 +11,14 @@ class SearchesController < ApplicationController
   # GET /searches/1
   # GET /searches/1.json
   def show
-    @bands = Band.where(genre: @search.genre)
+    if !@search.genre && !@search.band_name
+      redirect_to action: show, id: params[:id]
+    end
+    # Get array of band ids that match the genre and name searched for. Empty array if not searched for.
+    @band_id_by_genre = @search.genre ? Band.where(genre: @search.genre).map{|b| b.id} : []
+    @band_id_by_name = @search.band_name ? Band.where(band_name: @search.band_name).map{|b| b.id} : []
+    # Get the unique bands that match the search.
+    @bands = Band.find((@band_id_by_genre + @band_id_by_name).uniq)
     @new_search = Search.new
   end
 

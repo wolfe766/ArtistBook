@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
 
   def after_sign_in_path_for(resource_or_scope)
     if band_signed_in?
-      posts_path
+      band_path(current_band.id)
     elsif business_signed_in?
       business_path(current_business.id)
     end
