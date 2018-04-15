@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180415055705) do
+ActiveRecord::Schema.define(version: 20180415202720) do
 
   create_table "band_profiles", force: :cascade do |t|
     t.string "bio"
@@ -126,6 +126,7 @@ ActiveRecord::Schema.define(version: 20180415055705) do
     t.integer "business_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "band_name"
     t.index ["business_id"], name: "index_searches_on_business_id"
   end
 
