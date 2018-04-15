@@ -7,14 +7,13 @@ class Business < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :lockable #lockable added
 
-  has_attached_file :photo, styles:{ large: "600x600>", medium: "300x300>", thumbnail: "120x120#"}
+  has_attached_file :photo, styles:{ large: "600x600>", medium: "256x256>", thumbnail: "120x120#"}, default_url: "/photos/:style/missing.png"
   validates_attachment_content_type :photo, :content_type => ["image/jpg", "image/jpeg", "image/png", "image/gif"]
 
   # Business attribute validations
   validates :business_name, presence: true, length: {maximum: 50}
   validates :address, presence: true, length: {maximum: 100}
   validates :phone, format: /\d\d\d-\d\d\d-\d\d\d\d/
-  validates :photo, presence: true
   # Business associations
   has_many :business_requests
   has_many :bands, through: :business_requests
