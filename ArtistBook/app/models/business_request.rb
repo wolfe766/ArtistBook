@@ -6,6 +6,7 @@ class BusinessRequest < ApplicationRecord
 
   # Table Associations
   belongs_to :band
+  belongs_to :business
 
   # Attribute Validation
   validates :location, presence: true, length: {maximum: 250 }
