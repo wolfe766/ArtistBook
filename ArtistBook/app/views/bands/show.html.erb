@@ -30,7 +30,7 @@
     <h2>About</h2>
     <p><%= @band.bio %></p>
     </div>
-    <% if @band.spotify_link != "" %>
+    <% if @band.spotify_link %>
       <iframe src="https://open.spotify.com/embed?uri=<%= @band.spotify_link %>" width="300" height="300" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
     <% end %>
 </div>

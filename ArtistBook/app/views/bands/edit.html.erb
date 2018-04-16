@@ -3,6 +3,5 @@
 
   <%= render 'form', band: @band %>
 
-  <%= link_to 'Show', @band %> |
-  <%= link_to 'Back', bands_path %>
+  <%= link_to 'Back',  band_path(current_band.id) %>
 </div>
