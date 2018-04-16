@@ -48,9 +48,10 @@
     <br>
 <% elsif band_signed_in?%>
     <div class="request_index">
-    <h1>Business Requests</h1>
-    <div id="animation">
-      <h2>You currently have <span class="count"><%= @business_requests.count %></span> active requests.</h2>
-      <%= render partial: "business_requests/request", collection: @business_requests %>
+      <h1>Business Requests</h1>
+      <div id="animation">
+        <h2>You currently have <span class="count"><%= @business_requests.count %></span> active requests.</h2>
+        <%= render partial: "business_requests/request", collection: @business_requests %>
+      </div>
     </div>
 <% end %>

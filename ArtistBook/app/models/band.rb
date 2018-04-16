@@ -11,6 +11,7 @@ class Band < ApplicationRecord
   validates :band_name, presence: true, length: {maximum: 70}
   validates :genre, length: {maximum: 50}
   validates :phone, format: /\d\d\d-\d\d\d-\d\d\d\d/
+  validates :bio, length: {maximum: 2500}
 
   #Associations
   has_many :responds

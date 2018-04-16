@@ -20,7 +20,7 @@ class ApplicationController < ActionController::Base
 
   def configure_permitted_parameters
   	devise_parameter_sanitizer.permit(:sign_up, keys: [:band_name, :genre, :phone, :address, :photo])
-  	devise_parameter_sanitizer.permit(:account_update, keys: [:band_name, :genre, :phone, :address, :photo])
+  	devise_parameter_sanitizer.permit(:account_update, keys: [:band_name, :genre, :phone, :address, :photo, :bio, :spotify_link])
     devise_parameter_sanitizer.permit(:sign_up, keys: [:business_name, :phone, :address, :photo])
     devise_parameter_sanitizer.permit(:account_update, keys: [:business_name, :phone, :address, :photo])
   end

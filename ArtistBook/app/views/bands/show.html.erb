@@ -3,24 +3,36 @@
       <%= image_tag @band.photo.url(:medium) %>
       <p class="profileName"> <%= @band.band_name %></p>
   </div>
-  <table class="bioContainer">
-    <tr>
-      <td class="bioCategory">Genre: </td>
-      <td><%= @band.genre %> </td>
-    </tr>
-    <tr>
-      <td class="bioCategory">Email: </td>
-      <td><%= @band.email %> </td>
-    </tr>
-    <tr>
-      <td class="bioCategory">Phone: </td>
-      <td><%= @band.phone%> </td>
-    </tr>
-    <tr>
-      <td class="bioCategory">Address: </td>
-      <td><%= @band.address %> </td>
-    </tr>
-  </table>
+  <% if band_signed_in? && @band_id = current_band.id %>
+    <div class="bioEdit">
+      <%= link_to "Edit your profile »", edit_band_path(current_band.id) %>
+    </div>
+  <% end %>
+  <div class="bioContainer">
+    <table>
+      <tr>
+        <td class="bioCategory">Genre: </td>
+        <td><%= @band.genre %> </td>
+      </tr>
+      <tr>
+        <td class="bioCategory">Email: </td>
+        <td><%= @band.email %> </td>
+      </tr>
+      <tr>
+        <td class="bioCategory">Phone: </td>
+        <td><%= @band.phone%> </td>
+      </tr>
+      <tr>
+        <td class="bioCategory">Address: </td>
+        <td><%= @band.address %> </td>
+      </tr>
+    </table>
+    <h2>About</h2>
+    <p><%= @band.bio %></p>
+    </div>
+    <% if @band.spotify_link != "" %>
+      <iframe src="https://open.spotify.com/embed?uri=<%= @band.spotify_link %>" width="300" height="300" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+    <% end %>
 </div>
 <div>
 <%if business_signed_in?%>
