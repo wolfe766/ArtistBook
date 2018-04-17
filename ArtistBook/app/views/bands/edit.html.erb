@@ -1,6 +1,7 @@
-<h1>Editing Band</h1>
+<div id="profile_edit">
+  <h1>Edit Your Artist Profile</h1>
 
-<%= render 'form', band: @band %>
+  <%= render 'form', band: @band %>
 
-<%= link_to 'Show', @band %> |
-<%= link_to 'Back', bands_path %>
+  <%= link_to 'Back',  band_path(current_band.id) %>
+</div>

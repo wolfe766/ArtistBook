@@ -10,9 +10,9 @@ class ApplicationController < ActionController::Base
 
   def after_sign_in_path_for(resource_or_scope)
     if band_signed_in?
-      band_path(current_band.id)
+      homepage_band_path(current_band.id)
     elsif business_signed_in?
-      business_path(current_business.id)
+      homepage_business_path(current_business.id)
     end
   end
 
@@ -20,7 +20,7 @@ class ApplicationController < ActionController::Base
 
   def configure_permitted_parameters
   	devise_parameter_sanitizer.permit(:sign_up, keys: [:band_name, :genre, :phone, :address, :photo])
-  	devise_parameter_sanitizer.permit(:account_update, keys: [:band_name, :genre, :phone, :address, :photo])
+  	devise_parameter_sanitizer.permit(:account_update, keys: [:band_name, :genre, :phone, :address, :photo, :bio, :spotify_link])
     devise_parameter_sanitizer.permit(:sign_up, keys: [:business_name, :phone, :address, :photo])
     devise_parameter_sanitizer.permit(:account_update, keys: [:business_name, :phone, :address, :photo])
   end

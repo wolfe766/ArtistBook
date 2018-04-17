@@ -12,12 +12,12 @@
   <% end %>
 
     <div class="field">
-    <%= form.label :photo %>
+    <%= form.label "Profile Photo" %>
     <%= form.file_field :photo, id: :band_photo_name %>
   </div>
 
   <div class="field">
-    <%= form.label :band_name %>
+    <%= form.label "Artist Name" %>
     <%= form.text_field :band_name, id: :band_band_name %>
   </div>
 
@@ -39,6 +39,15 @@
   <div class="field">
     <%= form.label :email %>
     <%= form.text_field :email, id: :band_email %>
+  </div>
+
+  <div class="field">
+    <%= form.text_area :bio, cols: "45", rows: "5", placeholder: "Add a biography...", id: :bio %>
+  </div>
+
+  <div class="field">
+    <%= form.label "Provide a Spotify link for your music (will be embedded in your profile)" %>
+    <%= form.text_field :spotify_link, id: :spotify_link, placeholder: "e.g. spotify:album:1DFixLWuPkv3KT3TnV35m3" %>
   </div>
 
   <div class="actions">

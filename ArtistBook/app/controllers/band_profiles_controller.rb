@@ -1,3 +1,5 @@
+# CREATED BY: Brandon Brown 04/12/2018
+#   - band profile page controller
 class BandProfilesController < ApplicationController
   before_action :set_band_profile, only: [:show, :edit, :update, :destroy]
 

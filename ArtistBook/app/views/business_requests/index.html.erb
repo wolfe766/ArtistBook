@@ -26,8 +26,10 @@
         <tbody>
           <% @business_requests.each do |business_request| %>
             <tr>
-              <% if business_request.band_decision %>
-                <td><%= business_request.band_decision %></td>
+              <% if business_request.band_decision == false %>
+                <td class="rejected">Declined</td>
+              <% elsif business_request.band_decision == true %>
+                <td class="accepted">Accepted</td>
               <% else %>
                 <td class="pending_request">Pending</td>
               <% end %>
@@ -36,9 +38,11 @@
               <td><%= business_request.date %></td>
               <td><%= business_request.time %></td>
               <td><%= business_request.message %></td>
-              <td><%= link_to 'Edit', edit_business_request_path(business_request) %></td>
-              <td><%= link_to 'Cancel', business_request, method: :delete, data: { confirm: 'Are you sure you wish to cancel this artist request?' } %></td>
-            </tr>
+              <% if business_request.band_decision == nil %>
+                <td><%= link_to 'Edit', edit_business_request_path(business_request) %></td>
+                <td><%= link_to 'Cancel', business_request, method: :delete, data: { confirm: 'Are you sure you wish to cancel this artist request?' } %></td>
+              <% end %>
+              </tr>
           <% end %>
         </tbody>
       </table>
@@ -48,9 +52,10 @@
     <br>
 <% elsif band_signed_in?%>
     <div class="request_index">
-    <h1>Business Requests</h1>
-    <div id="animation">
-      <h2>You currently have <span class="count"><%= @business_requests.count %></span> active requests.</h2>
-      <%= render partial: "business_requests/request", collection: @business_requests %>
+      <h1>Business Requests</h1>
+      <div id="animation">
+        <h2>You currently have <span class="count"><%= @business_requests.count %></span> active requests.</h2>
+        <%= render partial: "business_requests/request", collection: @business_requests %>
+      </div>
     </div>
 <% end %>

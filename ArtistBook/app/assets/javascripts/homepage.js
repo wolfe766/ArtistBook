@@ -4,7 +4,7 @@ Description: Javascript code for the rotating icons on the homepage
 
 */
 
-$(function(){
+$(document).on('turbolinks:load', function(){
   $("#bandCard").on({
     mouseenter: function() { 
       if ($("#recordImage").getRotateAngle() >= 3600){

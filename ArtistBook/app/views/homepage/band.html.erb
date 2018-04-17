@@ -1,40 +1,28 @@
 
 <div class="profileContent">
-  <div class="profileContainer">
+  <div class="homepageContainer">
       <%= image_tag current_band.photo.url(:medium) %>
-      <p class="profileName"> <%= current_band.band_name %></p>
+      <p class="profileName">Welcome, <%= current_band.band_name %>!</p>
   </div>
-  <table class="bioContainer">
-    <tr>
-      <td class="bioCategory">Genre: </td>
-      <td><%= current_band.genre %> </td>
-    </tr>
-    <tr>
-      <td class="bioCategory">Email: </td>
-      <td><%= current_band.email %> </td>
-    </tr>
-    <tr>
-      <td class="bioCategory">Phone: </td>
-      <td><%= current_band.phone%> </td>
-    </tr>
-    <tr>
-      <td class="bioCategory">Address: </td>
-      <td><%= current_band.address %> </td>
-    </tr>
-  </table>
-        <div class="bioEdit"><%= link_to "Click To Edit", edit_band_path(current_band.id) %> </div>
-
   <%if @has_requests%>
     <div class="requestsActive container"><%= link_to "You have an active request! Click to view", business_requests_path%></div>
   <%end%>
   <div class="postsApplied container">
     <p class="cardTitle">Recent Posts You've Applied For</p>
-    <%= render partial: "homepage/post", collection: @posts_applied, locals: {applied: true} %>
+    <% if @posts_applied.length > 0 %>
+      <%= render partial: "homepage/post", collection: @posts_applied, locals: {applied: true} %>
+    <% else %>
+      <span>There is nothing to show!</span>
+    <%end%>
   </div>
 
     <div class="postsApplied container">
     <p class="cardTitle">Posts You May Be Interested In</p>
-    <%= render partial: "homepage/post", collection: @posts_not_applied, locals: {applied: false} %>
+      <% if @posts_not_applied.length > 0 %>
+        <%= render partial: "homepage/post", collection: @posts_not_applied, locals: {applied: true} %>
+      <% else %>
+        <span>There is nothing to show!</span>
+      <% end %>
   </div>
 </div>
 

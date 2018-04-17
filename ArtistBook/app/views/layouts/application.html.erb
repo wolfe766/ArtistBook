@@ -1,3 +1,9 @@
+<!-- Modified By: Brandon Brown 04/10/2018
+       - Added rendering of nav-bar partials
+     Modified By: Alec Maier 04/11/2018
+       - Added conditional rendering of nav-bar based on user signed in
+-->
+   
 <!DOCTYPE html>
 <html>
   <head>
@@ -22,9 +28,6 @@
     <% end %>
 
     <div class="site_content">
-    <% if notice %>
-    <p id="notice"><%= notice %></p>
-    <% end %>
     <% if alert %>
     <p id="alert"><%= alert %></p>
     <% end %>

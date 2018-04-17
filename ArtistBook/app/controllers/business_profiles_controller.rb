@@ -1,3 +1,5 @@
+# Created By: Brandon Brown 04/12/2018
+#  - Business profile page controller 
 class BusinessProfilesController < ApplicationController
   before_action :set_business_profile, only: [:show, :edit, :update, :destroy]
 
