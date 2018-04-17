@@ -3,6 +3,8 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 /*CREATED: Sam Wolfe 4/10/2018
+  MODIFIED: David Levine 4/17/2018
+    -Added some styling to center the link to profile button on the business homepage.
 
 Description: Styling for all pages under the Homepage controller.
 
@@ -172,6 +174,11 @@ html,body {
 
 .homepageContainer img{
   box-shadow: 0 2px 5px rgba(0,0,0,0.65);
+}
+
+.bioButton{
+    text-align: center;
+    vertical-align: middle;
 }
 
 .profileContainer img {

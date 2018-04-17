@@ -10,7 +10,7 @@
       <%= image_tag current_business.photo.url(:medium) %>
       <div>
         <div class="profileName">Welcome, <%= current_business.business_name %>!</div>
-        <div><%= link_to "Click to View/Edit Profile", edit_business_path(current_business.id) %></div>
+          <div class="bioButton"><%= link_to "Click to View/Edit Profile", business_path(current_business.id), class: "bioEdit" %></div>
       </div>
     </div>
   </div>
