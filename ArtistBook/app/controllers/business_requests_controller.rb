@@ -17,6 +17,7 @@ class BusinessRequestsController < ApplicationController
   end
 
   # GET /business_requests/new?band_id=BAND_ID
+  # or
   def new
     if params[:band_id]
       @band_id = params[:band_id]
@@ -31,18 +32,30 @@ class BusinessRequestsController < ApplicationController
 
   # POST /business_requests
   # POST /business_requests.json
+=begin
+    MODIFIED: David Levine 4/16/2018
+      -Fixed a bug where a failure to enter the correct
+       values would break your ability to create a post. 
+=end 
   def create
+     print "\n\nEntering create page" +"\n\n"
     @business_request = BusinessRequest.new(business_request_params)
-    respond_to do |format|
-      if @business_request.valid?
-        @business_request.save!
-        flash[:notice] = "Your request has been sent to the artist."
-        format.html { redirect_to :action => "index" }
-        format.json { render :index, status: :created, location: @business_request }
-      else
-        format.html { render :new }
-        format.json { render json: @business_request.errors, status: :unprocessable_entity }
+    
+    if @business_request.valid?
+      respond_to do |format|
+          
+          flash[:alert] = "Your request has been sent to the artist."
+          format.html { redirect_to :action => "index" }
+          format.json { render :index, status: :created, location: @business_request }
       end
+    else
+        respond_to do |format|
+        flash[:alert] = "ERROR: you entered incorrect values into your form. Try again."
+        format.html { redirect_to :action => "new", band_id: business_request_params[:band_id]}
+        #format.html { render :new }
+        #format.json { render json: @business_request.errors, status: :unprocessable_entity }
+      end
+  
     end
   end
 
