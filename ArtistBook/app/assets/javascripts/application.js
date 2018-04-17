@@ -18,3 +18,8 @@
 //= require popper
 //= require bootstrap-sprockets
 //= require post
+
+// function to ensure that dropdown menus work on first click
+$(document).ready(function() {
+    $(".dropdown-toggle").dropdown();
+});
