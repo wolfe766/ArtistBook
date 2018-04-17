@@ -1,4 +1,6 @@
 # CREATED: David Levine 4/7/2018
+#MODIFIED: Sam WOlfe 4/6/2018
+# => -added permitted parameters for photos
 # MODIFIED: Alec Maier 4/7/2018
 #   - added permitted parameters for business
 # Description: Main application controller

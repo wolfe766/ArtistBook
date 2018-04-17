@@ -1,5 +1,8 @@
 # CREATED: Alec Maier 4/7/2018
 # Description: Model for a business in the database
+#MODIFIED: Sam Wolfe 4/16/2018
+# -Added necessary validations for uploading images
+
 
 class Business < ApplicationRecord
   # Include default devise modules. Others available are:

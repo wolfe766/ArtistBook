@@ -1,3 +1,6 @@
+#MODIFIED: Sam Wolfe 4/16/2018
+# -Added necessary validations for uploading images
+
 class Band < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable

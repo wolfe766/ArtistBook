@@ -2,11 +2,22 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+/*CREATED: Sam Wolfe 4/10/2018
+
+Description: Styling for all pages under the Homepage controller.
+
+Includes:
+Homepage/home - The main landing page
+Homepage/band - The band homepage
+Homepage/business -The business homepage
+
+*/
 html,body {
     height: 100%;
-  }
-  
-  #left {
+}
+
+//Styling for the left bar on the homepage
+#left {
     border-right: 2px solid black;
     height: 100%;
     background-image: linear-gradient(to right, rgba(20, 20, 20, .6) 0%, rgba(90, 90, 90, .2)10%, rgba(20,20,20,.5) 20%, transparent 60%, rgba(70,70,70,.0) 86%,rgba(110, 110, 110, .8) 95%, rgba(0, 0, 0, .8) 100%), image-url("concert_cropped.jpg") !important;; /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */  
@@ -15,14 +26,16 @@ html,body {
     background-color: rgba(20,20,20,.95);
 }
 
-  #right{
-      height: 100%;
+//Right bar of the homepage
+#right{
+  height: 100%;
       background-image: linear-gradient(to right,rgba(40, 40, 40, .8) 0%, rgba(110,110, 110, .8) 5%,rgba(110,110,110,.5) 12%, transparent 60%, rgba(90, 90, 90, .0) 80%, rgba(50, 142, 78, .2) 100%), image-url("bus_cropped.jpg") !important;; /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */  
-    background-size: 100% !important;
-    background: no-repeat;
-    background-color: black;
-}
+      background-size: 100% !important;
+      background: no-repeat;
+      background-color: black;
+  }
 
+//Styling for login cards on the homepage
 .loginCard{
     width: 30%;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.4);
@@ -53,14 +66,19 @@ html,body {
     color: #538fef;
 }
 
+//Styling for banner above the login cards
 #bandBanner{
     background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(163, 240, 255, .2) 60%, rgba(0,216,255,0) 100%) !important;    
     padding: 10px 0;
+    color: black !important;
+    text-shadow: 0 2px 2px white;
 }
 
 #businessBanner{
     background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(140, 140, 140, .2) 80%, rgba(0, 20, 20,0) 100%) !important;    
     padding: 10px 0;
+    color: black !important;
+    text-shadow: 0 2px 2px white;
 }
 
 .bannerCard{
@@ -76,6 +94,8 @@ html,body {
     border-bottom: 2px solid black !important; 
 }
 
+
+//Styling for the navigation buttons at the top of the homepage
 .homepageNav{
     font-size: 2em;
     margin-top: 1% !important;
@@ -128,6 +148,8 @@ html,body {
     right: 70px;
 }
 
+//BEGIN STYLING FOR HOMEPAGES BAND/BUSINESS
+//Styling for the image and profile name
 .profileContent{
     animation: 0.5s ease-out 0s 1 slide_in;
     margin: auto;
@@ -166,6 +188,8 @@ html,body {
     font-weight: bold;
     color: #538fef;
 }
+
+//Styling for the bio information
 .bioCategory{
     color: #538fef;
     text-align: right;
@@ -206,6 +230,8 @@ html,body {
     margin: 50px 20px;
 }
 
+//Styling for the posts applied / posts recommended views
+
 .postsApplied{
     margin: auto;
     margin-top: 50px;
@@ -221,6 +247,8 @@ html,body {
   font-size: 2.5em;
 }
 
+//BEGIN STYLE FOR BAND PROFILE PAGE
+//Style for edit button
 .bioEdit{
     font-size: 1.2em;
     cursor: pointer;
@@ -257,7 +285,7 @@ html,body {
 }
 
 .requestsActive a{
-        color:white !important;
+    color:white !important;
 
 }
 
