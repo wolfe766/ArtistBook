@@ -16,8 +16,10 @@
   </head>
 
   <% not_logged_in = !(band_signed_in? || business_signed_in?) %>
-  <% on_sign_in_sign_up = current_page?(new_band_session_path) ||  current_page?(new_business_session_path) || current_page?(new_band_registration_path) ||  current_page?(new_business_registration_path)%> 
-  <body <% if not_logged_in && on_sign_in_sign_up %>id="login_bg"<% end %>>
+  <%current_url = request.original_fullpath %>
+  <%on_contact_or_info = (current_url == '/developer/developer_info') || (current_url == '/developer/about_us')%>
+
+  <body <% if not_logged_in && !on_contact_or_info %>id="login_bg"<% end %>>
     <!-- Header navigation bar -->
     <% if business_signed_in? %>
       <%= render 'layouts/nav_bar_business' %>
