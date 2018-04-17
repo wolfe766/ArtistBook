@@ -1,6 +1,12 @@
-#MODIFIED: Sam Wolfe 4/16/2018
-# -Added necessary validations for uploading images
+=begin
+CREATED: David Levine
+MODIFIED: Sam Wolfe 4/16/2018
+ -Added necessary validations for uploading images
 
+Description: model representing band objects in our database.
+             Also includes necessary validations.
+
+=end
 class Band < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable

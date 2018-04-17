@@ -1,8 +1,6 @@
 =begin
 	MODIFIED: David Levine 4/14/2018
 		-Added validations to the post attributes.
-
-
 =end
 class Post < ApplicationRecord
 
