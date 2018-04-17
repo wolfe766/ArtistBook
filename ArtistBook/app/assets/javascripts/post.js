@@ -24,14 +24,20 @@ function updateResponse(responseId, bandId, postId, bus_decision){
 	});
 }
 
-
 $( document ).on('turbolinks:load', function() {
+	// Set up the ajax with the CSRF token.
 	$.ajaxSetup({
 	  headers: {
 	    'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
 	  }
 	});
 
+	/*
+		When the post apply button is clicked obtain the current band's id
+		and the business ID for the business the band wants to apply to.
+		Send a POST request using ajax to apply to the position.
+		Then replace the apply button with a green success button.
+	*/
 	$('.post-apply-button').click(function(){
 		var postId = $(this).siblings('.post-partial-post-id').html();
 		var bandId = $(this).siblings('.post-partial-band-id').html();
