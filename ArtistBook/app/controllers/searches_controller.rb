@@ -12,7 +12,7 @@ class SearchesController < ApplicationController
   # GET /searches/1.json
   def show
     if !@search.genre && !@search.band_name
-      redirect_to action: show, id: params[:id]
+      redirect_to action: new
     end
     # Get array of band ids that match the genre and name searched for. Empty array if not searched for.
     @band_id_by_genre = @search.genre ? Band.where(genre: @search.genre).map{|b| b.id} : []
@@ -80,6 +80,6 @@ class SearchesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def search_params
-      params.require(:search).permit(:genre, :business_id)
+      params.require(:search).permit(:genre, :business_id, :band_name)
     end
 end
