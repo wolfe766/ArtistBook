@@ -1,12 +1,20 @@
 <!--
   CREATED BY: Brandon Brown 4/16/2018
   DESCRIPTION: Business home page 
+
+  MODIFIED: David Levine 4/17/2018
+    -Added business profile information and a link to edit said information
 -->
 <div class="profileContent">
   <div class="homepageContainer">
       <%= image_tag current_business.photo.url(:medium) %>
-      <p class="profileName">Welcome, <%= current_business.business_name %>!</p>
+      <div>
+        <div class="profileName">Welcome, <%= current_business.business_name %>!</div>
+        <div><%= link_to "Click to View/Edit Profile", edit_business_path(current_business.id) %></div>
+      </div>
+    </div>
   </div>
+
 
   <p class="cardTitle">Your Active Postings</p>
   <div class="postsApplied containter"> 
