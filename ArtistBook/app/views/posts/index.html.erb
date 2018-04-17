@@ -1,4 +1,4 @@
-<%
+<!-- 
 =begin
   MODIFIED: David Levine 04/09/2018
     -Changed view to support different user accounts.
@@ -9,11 +9,10 @@
   	-Posts are now seperated into what's been applied to and what hasn't
   	 been applied to
 =end
-%>
+ -->
 <div class="post">
 	<% if business_signed_in? %>
 	<h1>Your Business's Requests</h1>
-	<% #check if user has made any posts yet. otherwise notify them they need to make post %>
 	<% if !@posts%>
 	  <p>You haven't made any posts yet!</p>
 	<% else %>
@@ -35,4 +34,3 @@
 		<% end %>
 	<% end %>
 </div>
-<% end %>

@@ -4,7 +4,7 @@ class Band < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :lockable
 
-  has_attached_file :photo, styles:{ large: "600x600>", medium: "450x450>", profile: "300x300#", thumbnail: "120x120#"}, default_url: "/photos/:style/missing.png"
+  has_attached_file :photo, styles:{ large: "600x600>", medium: "375x375#", profile: "300x300#", thumbnail: "120x120#"}, default_url: "/photos/:style/missing.png"
   validates_attachment_content_type :photo, :content_type => ["image/jpg", "image/jpeg", "image/png", "image/gif"]
 
   #attribute validations

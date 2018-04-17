@@ -1,4 +1,7 @@
 <div class="ui card">
+  <div class="image">
+    <%= image_tag band.photo.url(:profile) %>
+  </div>
   <div class="content">
     <div class="header"><%= band.band_name %></div>
   </div>
@@ -31,7 +34,7 @@
   <div class="extra content">
     <div style="display:none;" class="searches-band-partial-band-id"><%= band.id %></div>
     <div style="display:none;" class="searches-band-partial-business-id"><%= current_business.id %></div>
-    <%= link_to "Request Band", new_business_request_path(band_id: band.id), method: :get, class: "btn btn-info", "role" => "button", "style" => "color:white" %>
+    <%= link_to "Request Artist", new_business_request_path(band_id: band.id), method: :get, class: "btn btn-info", "role" => "button", "style" => "color:white" %>
     <%= link_to "View Profile", band_path(band.id), method: :get, class: "btn btn-info", "role" => "button", "style" => "color:white" %>
     </br>
   </div>

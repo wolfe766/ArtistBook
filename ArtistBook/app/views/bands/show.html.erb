@@ -1,6 +1,6 @@
 <div class="profileContent">
   <div class="profileContainer">
-      <%= image_tag @band.photo.url(:medium) %>
+      <%= image_tag @band.photo.url(:profile) %>
       <p class="profileName"> <%= @band.band_name %></p>
   </div>
   <% if band_signed_in? && @band_id = current_band.id %>
@@ -8,7 +8,7 @@
   <% end %>
   <div>
 <%if business_signed_in?%>
-<%= link_to "Request This Band", new_business_request_path(band_id: @bandID), method: :get, class: "btn btn-info bigBtn", "role" => "button", "style" => "color:white" %>
+<%= link_to "Request This Artist", new_business_request_path(band_id: @bandID), method: :get, class: "btn btn-info bigBtn", "role" => "button", "style" => "color:white" %>
 <%end%>
 </div>
   <div class="bioContainer">
@@ -33,7 +33,9 @@
     <h2>About</h2>
     <p><%= @band.bio %></p>
     </div>
+    <% if @band.spotify_link %>
     <% if @band.spotify_link != "" %>
       <iframe src="https://open.spotify.com/embed?uri=<%= @band.spotify_link %>" width="300" height="300" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+    <% end %>
     <% end %>
 </div>
