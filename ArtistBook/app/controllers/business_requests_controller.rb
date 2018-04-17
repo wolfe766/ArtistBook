@@ -52,8 +52,7 @@ class BusinessRequestsController < ApplicationController
         respond_to do |format|
         flash[:alert] = "ERROR: you entered incorrect values into your form. Try again."
         format.html { redirect_to :action => "new", band_id: business_request_params[:band_id]}
-        #format.html { render :new }
-        #format.json { render json: @business_request.errors, status: :unprocessable_entity }
+
       end
   
     end
