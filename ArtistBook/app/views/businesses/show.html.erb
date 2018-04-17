@@ -1,5 +1,9 @@
 <!-- CREATED: Sam Wolfe 4/17/2018
-
+     MODIFIED: David Levine 4/17/2018
+      -modified edit profile button so that it matches the profile style of the other
+       band edit profile button, and also so that it works (before, clicking anything besides 
+       the text wouldn't link you)
+  
 Description: Profile page for businesses
  -->
 <div class="profileContent">
@@ -8,8 +12,8 @@ Description: Profile page for businesses
       <p class="profileName"> <%= @business.business_name %></p>
   </div>
   <% if business_signed_in? && @business_id = current_business.id %>
-    <div class="bioEdit">
-      <%= link_to "Edit your profile »", edit_business_path(current_business.id) %>
+    <div>
+      <%= link_to "Edit your profile »", edit_business_path(current_business.id), class: "bioEdit"%>
     </div>
   <% end %>
   <div class="bioContainer">
