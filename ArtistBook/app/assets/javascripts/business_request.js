@@ -5,12 +5,21 @@
 
 
 $( document ).on('turbolinks:load', function() {
+	// Set up the ajax with the CSRF token.
 	$.ajaxSetup({
 	  headers: {
 	    'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
 	  }
 	});
 
+	/*
+		When a band clicks the accept business request button on the
+		/business_requests page obtain all information relevant to the
+		request and then make a PATCH request to update the business request
+		object with the band's accept decision. Replace the accept button
+		with a green sucess button that will not allow the user to send any 
+		more PATCH requests.
+	*/
 	$('.accept-business-request-button').click(function(){
 		var containingCard = $(this).closest('.card');
 		var requestId = $(this).siblings('.request-partial-request-id').html();
@@ -50,6 +59,14 @@ $( document ).on('turbolinks:load', function() {
 		parent.append('<button class=\'btn btn-success\'>Accepted</button>');
 	});
 
+	/*
+		When a band clicks the accept business request button on the
+		/business_requests page obtain all information relevant to the
+		request and then make a PATCH request to update the business request
+		object with the band's accept decision.  Replace the accept button
+		with a green sucess button that will not allow the user to send any 
+		more PATCH requests.
+	*/
 	$('.decline-business-request-button').click(function(){
 		var containingCard = $(this).closest('.card');
 		var requestId = $(this).siblings('.request-partial-request-id').html();

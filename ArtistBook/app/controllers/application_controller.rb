@@ -4,6 +4,8 @@
 # MODIFIED: Alec Maier 4/7/2018
 #   - added permitted parameters for business
 # Description: Main application controller
+# MODIFIED: Henry Karagory 
+# => added the after_sign)in_path_for method to route businesses and bands to the correct locatoin after sign in.
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :configure_permitted_parameters, if: :devise_controller?

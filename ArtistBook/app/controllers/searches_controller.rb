@@ -10,6 +10,10 @@ class SearchesController < ApplicationController
 
   # GET /searches/1
   # GET /searches/1.json
+=begin
+    MODIFIED: Henry Karagory 4/15/2018
+      - Searching for both genre and name, making sure that only unique bands are returned. 
+=end 
   def show
     if !@search.genre && !@search.band_name
       redirect_to action: new
