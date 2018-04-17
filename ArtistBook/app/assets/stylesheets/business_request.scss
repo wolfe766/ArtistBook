@@ -12,7 +12,7 @@
 }
 
 .request_form input[type=submit] {
-  background-color: #1d6ae5;
+  background-color: #538fef;
   color: white;
   border: none;
   padding: 15px;
@@ -75,7 +75,7 @@
 
 .business_req h1 {
   animation: 0.5s ease-out 0s 1 slide_in;
-  color: #1d6ae5;
+  color: #538fef;
   font-size: 3em;
 }
 
@@ -100,18 +100,18 @@
 }
 
 .request_form .field {
-  color: #0842a0;
+  color: #538fef;
 }
 
 .request_index th {
-  color: #0842a0;
+  color: #538fef;
 }
 
 .request_index h1 {
   animation: 0.5s ease-out 0s 1 slide_in;
   -webkit-animation: 0.5s ease-out 0s 1 slide_in;
   -moz-animation: 0.5s ease-out 0s 1 slide_in;
-  color: #1d6ae5;
+  color: #538fef;
   font-size: 4em;
   margin-right: 6%;
 }
@@ -155,21 +155,23 @@
 }
 
 .request_index .accepted {
-  padding-left: 10px;
-  font-size: 1.1em;
+  padding-left: 2px;
+  padding-right: 2px;
+  font-size: 1em;
   color: green;
 }
 
 .request_index .count {
-  color: #0842a0;
+  color: #538fef;
   padding-left: 2px;
   padding-right: 2px;
   font-size: 1.2em;
 }
 
 .request_index .rejected {
-  padding-left: 10px;
-  font-size: 1.1em;
+  padding-left: 2px;
+  padding-right: 2px;
+  font-size: 1em;
   color: #c9100a;
 }
 

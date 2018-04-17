@@ -19,7 +19,12 @@
   <%current_url = request.original_fullpath %>
   <%on_contact_or_info = (current_url == '/developer/developer_info') || (current_url == '/developer/about_us')%>
 
-  <body <% if not_logged_in && !on_contact_or_info %>id="login_bg"<% end %>>
+  <body
+    <% if not_logged_in && !on_contact_or_info %>
+      id="login_bg"
+    <% else %>
+      id="site_bg"
+    <% end %>>
     <!-- Header navigation bar -->
     <% if business_signed_in? %>
       <%= render 'layouts/nav_bar_business' %>
