@@ -1,0 +1,74 @@
+//CREATED: Alec Maier 4/10/2018
+// Description: Some styling for business requests page
+
+.request_form textarea {
+  resize: none;
+  padding: 1.2%;
+  margin-top: 10px;
+}
+
+::placeholder {
+  font-style: italic
+}
+
+.request_form input[type=submit] {
+  background-color: #1d6ae5;
+  color: white;
+  border: none;
+  padding: 15px;
+  transition: all 0.1s;
+  cursor: pointer;
+  margin-bottom: 5%;
+  margin-top: 5%;
+}
+
+.request_form input[type=text] {
+  width: 70%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.request_form input[type=date] {
+  width: 70%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.request_form input[type=date]:hover, input[type=text]:hover, textarea:hover {
+  box-shadow: 1px 1px 5px #bfa96e
+}
+
+.request_form input[type=text]:hover {
+  box-shadow: 1px 1px 5px #bfa96e
+}
+
+.request_form textarea:hover {
+  box-shadow: 1px 1px 5px #bfa96e
+}
+
+.request_form input[type=date]:focus {
+  box-shadow: 1px 1px 5px #bfa96e;
+}
+
+.request_form input[type=text]:focus {
+  box-shadow: 1px 1px 5px #bfa96e;
+}
+
+.request_form textarea:focus {
+  box-shadow: 1px 1px 5px #bfa96e;
+}
+
+.request_form input[type=submit]:hover {
+  opacity: 0.8;
+  color: white;
+  border: none;
+  transform: scale(1.05);
+}

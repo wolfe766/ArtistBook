@@ -1,0 +1,60 @@
+<!-- 
+Created: David and Henry 4/11/2018
+  -Setup the partial for posts together
+
+MODIFIED: David Levine 4/13/2018
+  -Changed simple partial to Semantic UI card example
+
+MODIFIED: Henry Karagory and David Levine 4/13/2018
+  -Now partial takes a variable called "applied" which lets us render appropriate
+   buttons for when a band has applied to a posting or not
+
+MODIFIED: Sam Wolfe 4/16/2018
+ -Added profile image to card
+
+-->
+<div class="ui card">
+  <div class="image">
+    <%= image_tag band.photo.url(:profile) %>
+  </div>
+  <div class="content">
+    <div class="header"><%= band.band_name %></div>
+  </div>
+  <div class="content">
+    <h4 class="ui sub header">Posting Details</h4>
+    <div class="ui small feed">
+      <div class="event">
+        <div class="content">
+          <div class="summary">
+             <span>Genre:</span> <%= band.genre %>
+          </div>
+        </div>
+      </div>
+      <div class="event">
+        <div class="content">
+          <div class="summary">
+             <span>Email:</span> <%= band.email %>
+          </div>
+        </div>
+      </div>
+      <div class="event">
+        <div class="content">
+          <div class="summary">
+             <span>Phone:</span> <%= band.phone %>
+          </div>
+        </div>
+      </div>
+      <div class="event">
+        <div class="content">
+          <div class="summary">
+             <span>Address:</span> <%= band.address %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="extra content">
+    <%= link_to "View Profile", band_path(band.id), method: :get, class: "btn btn-info", "role" => "button", "style" => "color:white" %> 
+    <%= link_to "Request Artist", new_business_request_path(band_id: band.id), method: :get, class: "btn btn-info", "role" => "button", "style" => "color:white" %>
+  </div>
+</div>
