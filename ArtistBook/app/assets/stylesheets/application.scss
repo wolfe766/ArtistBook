@@ -16,6 +16,12 @@
  */
 ///stylesheets/application.scss
 
+
+//override bootstrap default iteration count (2)
+*{
+  animation-iteration-count: 1;
+}
+
 body {
   background-color: #f4f4f4;
 }
@@ -49,6 +55,12 @@ body {
   padding-right: 25px !important;
   color: #0842a0 !important;
 }
+
+.navbar .nav-link:hover{
+  background-color: lightgrey;
+}
+
+
 
 .navbar .navbar-brand {
   font-style: italic;
