@@ -1,25 +1,29 @@
-
-<%= image_tag @business.photo.url(:thumbnail) %>
-
-<p>
-  <strong>Business name:</strong>
-  <%= @business.business_name %>
-</p>
-
-<p>
-  <strong>Phone:</strong>
-  <%= @business.phone %>
-</p>
-
-<p>
-  <strong>Address:</strong>
-  <%= @business.address %>
-</p>
-
-<p>
-  <strong>Email:</strong>
-  <%= @business.email %>
-</p>
-
-<%= link_to 'Edit', edit_business_path(@business) %> |
-<%= link_to 'Back', businesses_path %>
+<div class="profileContent">
+  <div class="profileContainer">
+      <%= image_tag @business.photo.url(:medium) %>
+      <p class="profileName"> <%= @business.business_name %></p>
+  </div>
+  <% if business_signed_in? && @business_id = current_business.id %>
+    <div class="bioEdit">
+      <%= link_to "Edit your profile »", edit_business_path(current_business.id) %>
+    </div>
+  <% end %>
+  <div class="bioContainer">
+    <table>
+      <tr>
+        <td class="bioCategory">Address: </td>
+        <td><%= @business.address %> </td>
+      </tr>
+      <tr>
+        <td class="bioCategory">Email: </td>
+        <td><%= @business.email %> </td>
+      </tr>
+      <tr>
+        <td class="bioCategory">Phone: </td>
+        <td><%= @business.phone%> </td>
+      </tr>
+    </table>
+  </div>
+</div>
+<div>
+</div>

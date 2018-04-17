@@ -50,18 +50,25 @@ div {
   color: green;
 }
 
-.field_with_errors {
+.field_with_errors input {
   padding: 2px;
-  background-color: red;
+  box-shadow: 0 2px 5px red;
   display: table;
+}
+
+.field_with_errors label:after {
+  padding-left: 2%;
+  content: "!";
+  color: red;
+  font-size: 1.5em;
 }
 
 #error_explanation {
   width: 450px;
-  border: 2px solid red;
-  padding: 7px 7px 0;
+  padding: 5px;
   margin-bottom: 20px;
   background-color: #f0f0f0;
+  box-shadow: 0 2px 3px grey;
 
   h2 {
     text-align: left;
