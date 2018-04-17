@@ -19,7 +19,7 @@
     <div class="postsApplied container">
     <p class="cardTitle">Posts You May Be Interested In</p>
       <% if @posts_not_applied.length > 0 %>
-        <%= render partial: "homepage/post", collection: @posts_not_applied, locals: {applied: true} %>
+        <%= render partial: "homepage/post", collection: @posts_not_applied, locals: {applied: false} %>
       <% else %>
         <span>There is nothing to show!</span>
       <% end %>
