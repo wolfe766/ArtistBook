@@ -38,13 +38,11 @@ class BusinessRequestsController < ApplicationController
        values would break your ability to create a post. 
 =end 
   def create
-     print "\n\nEntering create page" +"\n\n"
     @business_request = BusinessRequest.new(business_request_params)
     
     if @business_request.valid?
       respond_to do |format|
-          
-          flash[:alert] = "Your request has been sent to the artist."
+          @business_request.save!
           format.html { redirect_to :action => "index" }
           format.json { render :index, status: :created, location: @business_request }
       end
