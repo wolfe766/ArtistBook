@@ -5,10 +5,15 @@ ArtistBook is a small scale social media website designed to connect Artists to 
 This project makes use of Ruby, JavaScript, and HTML/CSS. 
 
 It makes use of the following technologies:
+
 -Ruby on Rails
+
 -Bootstrap
+
 -Semantic UI
+
 -Paperclip Ruby Gem
+
 -AJAX
 
 # Features
